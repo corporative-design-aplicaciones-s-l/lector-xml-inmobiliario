@@ -31,4 +31,9 @@
 
     <!-- DESIGN SYSTEM -->
     <link rel="stylesheet" href="/assets/css/design-system-base.css">
+    
+    <!-- SCRIPTS -->
+    <script src="/assets/js/dropdowns.js" defer></script>
+    <script src="/assets/js/location-filters.js" defer></script>
+
 </head>
