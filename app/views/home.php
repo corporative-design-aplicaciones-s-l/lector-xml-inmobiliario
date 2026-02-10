@@ -227,8 +227,8 @@ $selected = fn($name, $v) =>
       </p>
     </header>
 
-    </div>
-    <div>
+  </div>
+  <div>
     <!-- GRID -->
     <div style="
       display: grid;
@@ -240,37 +240,45 @@ $selected = fn($name, $v) =>
       <?php if (!empty($properties)): ?>
         <?php foreach (array_slice($properties, 0, 20) as $p): ?>
 
-          <article class="card">
+          <a href="/property/<?= urlencode($p['id'] ?? '') ?>" style="text-decoration:none; color:inherit;">
 
-            <?php if (!empty($p['images'][0])): ?>
-              <div style="
-                  width:100%;
-                  aspect-ratio: 4 / 3;
-                  overflow:hidden;
-                  border-radius: var(--radius-md);
-                  margin-bottom: var(--space-3);
-              ">
-                <img src="<?= htmlspecialchars($p['images'][0]) ?>" alt="" style="
-                  width:100%;
-                  height:100%;
-                  object-fit:cover;
-                  display:block;
-                ">
+            <article class="card property-card">
+
+              <!-- IMAGEN -->
+              <?php if (!empty($p['images'][0])): ?>
+                <div class="property-image">
+                  <img src="<?= htmlspecialchars($p['images'][0]) ?>" alt="">
+
+                  <!-- PRECIO OVERLAY -->
+                  <div class="property-price">
+                    <?= number_format($p['price'], 0, ',', '.') ?> €
+                  </div>
+                </div>
+              <?php endif; ?>
+
+
+              <!-- CONTENIDO -->
+              <div class="property-body">
+
+                <div class="property-type">
+                  <?= htmlspecialchars($p['type']) ?>
+                </div>
+
+                <div class="property-town">
+                  <?= htmlspecialchars($p['town']) ?>
+                </div>
+
+                <div class="property-meta">
+                  <?= $p['beds'] ?> hab ·
+                  <?= $p['baths'] ?> baños ·
+                  <?= $p['built'] ?> m²
+                </div>
+
               </div>
-            <?php endif; ?>
 
-            <strong><?= htmlspecialchars($p['type']) ?></strong><br>
-            <?= htmlspecialchars($p['town']) ?><br>
+            </article>
+          </a>
 
-            <div style="margin-top: var(--space-2); font-weight: var(--font-weight-semibold);">
-              <?= number_format($p['price'], 0, ',', '.') ?> €
-            </div>
-
-            <div class="text-muted" style="margin-top: var(--space-1);">
-              <?= $p['beds'] ?> hab · <?= $p['baths'] ?> baños · <?= $p['built'] ?> m²
-            </div>
-
-          </article>
 
         <?php endforeach; ?>
       <?php else: ?>

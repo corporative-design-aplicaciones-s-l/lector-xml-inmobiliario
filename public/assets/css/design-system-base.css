@@ -278,12 +278,70 @@ label {
   color: var(--color-text-primary);
 }
 
-.card {
+/* ================= PROPERTY CARD ================= */
+
+.property-card {
+  padding: 0;
+  overflow: hidden;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.card:hover {
+.property-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  cursor: pointer;
+}
+
+
+/* Imagen */
+.property-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Precio overlay */
+.property-price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/* Body */
+.property-body {
+  padding: var(--space-4);
+}
+
+.property-type {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-lg);
+}
+
+.property-town {
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.property-meta {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
 }

@@ -35,5 +35,6 @@
     <!-- SCRIPTS -->
     <script src="/assets/js/dropdowns.js" defer></script>
     <script src="/assets/js/location-filters.js" defer></script>
+    <script src="/assets/js/lightbox.js" defer></script>
 
 </head>
