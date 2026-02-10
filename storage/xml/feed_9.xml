@@ -1,0 +1,1235 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+
+<kyero>
+    <feed_version>3</feed_version>
+</kyero>
+
+
+
+<property>
+
+    <id>12859</id>
+
+    <date>2026-01-15 16:05:54</date>
+
+    <ref>2423C</ref>
+
+    <price>495000</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Apartment]]></type>
+
+    <town>Orihuela Costa</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>Playa Flamenca</location_detail>
+
+    <beds>2</beds>
+
+    <baths>2</baths>
+
+    <pool>1</pool>
+            <location>
+            <latitude>37.94053530966407</latitude>
+            <longitude>-0.7212364325748845</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            B            </consumption>
+            <emissions>
+                B            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>84</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/12859/penthouse-with-sea-views-and-jacuzz-in-amanecer-deluxe-residential/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  Penthouse apartment located in the prestigious and modern Amanecer Deluxe residential complex, in a quiet area known for its contemporary architecture and excellent location. The property has a built area of 75 m² and consists of 2 spacious bedrooms, 2 full bathrooms with underfloor heating, a fully equipped open-plan kitchen, and a bright living-dining area with access to a terrace. The apartment is sold as shown in the photographs and is ready to move in.&#13;&#13;
+On the rooftop, there is an impressive 60 m² solarium with jacuzzi, perfect for relaxing, sunbathing, and enjoying open views. The property also includes an underground parking space and a storage room.&#13;&#13;
+The gated community offers excellent communal facilities, including a swimming pool, barbecue area, children’s playground, gym, and sauna. All essential services such as supermarkets, sports centers, restaurants, and leisure areas are nearby.&#13;&#13;
+Located just a few minutes from the beaches of Orihuela Costa, within walking distance to shops, bars, and restaurants, and in a strategic area with planned infrastructure developments that will improve access to the beaches and enhance the property’s value.&#13;&#13;
+An ideal option as a permanent home, holiday property, or investment. Contact us today to arrange a viewing. ]]></en>        <es><![CDATA[ Ático situado en la prestigiosa y moderna urbanización Amanecer Deluxe, en una zona tranquila que destaca por su arquitectura contemporánea y excelente ubicación. La vivienda cuenta con 75 m² construidos y se distribuye en 2 amplios dormitorios, 2 baños completos con suelo radiante, cocina abierta totalmente equipada y un luminoso salón-comedor con salida a la terraza. La propiedad se vende tal como aparece en las fotografías y está lista para entrar a vivir.&#13;&#13;
+En la azotea se encuentra un impresionante solárium de 60 m² con jacuzzi, ideal para relajarse, tomar el sol y disfrutar de vistas despejadas. Además, la vivienda incluye plaza de garaje subterráneo y trastero.&#13;&#13;
+La urbanización es cerrada y ofrece excelentes zonas comunes, como piscina, zona de barbacoa, parque infantil, gimnasio y sauna. En los alrededores se encuentran supermercados, centros deportivos, restaurantes, zonas de ocio y todos los servicios necesarios.&#13;&#13;
+Ubicada a pocos minutos de las playas de Orihuela Costa, a distancia a pie de comercios, bares y restaurantes, en una zona estratégica con futuras inversiones en infraestructuras que mejorarán la conexión con las playas y aumentarán el valor de la propiedad.&#13;&#13;
+Ideal como vivienda habitual, residencia vacacional o inversión. Contáctanos y concierta tu visita hoy mismo. ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Furnished</feature>
+            <feature>Lift</feature>
+            <feature>Barbecue</feature>
+            <feature>Balcony</feature>
+            <feature>Heating</feature>
+            <feature>Home appliances</feature>
+            <feature>Garage</feature>
+            <feature>Garden</feature>
+            <feature>Communal swimming pool</feature>
+            <feature>Reinforced door</feature>
+            <feature>Solarium</feature>
+            <feature>Terrace</feature>
+            <feature>Storage room</feature>
+            <feature>Distance to the sea</feature>
+            <feature>Blinds</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe4013021dhb17dmtr2cep2f.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivaegj1nch3gh211g21s13m3h1i.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40bpsq2r1av51cac1p2d.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe4013ar18nn1gm31h44jfh2e.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40v6o12ab1ct31g6h1foh2g.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40783i901j5e1efv12ag23.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40sracb0108ejjc23e22.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40cl113501dk1s473lf24.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivaegj1npe51nv8163r1rsbhmq1h.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe401qgn13661tdoh2115121.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe401jrf1svqqbddv7q2u2b.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe4019b7i711pha14lk1p172a.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40sb44meo971kh424o26.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40m704g3mga1naj2vg27.jpg</url>
+                                    </image>
+                    <image id="15">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe407mf1boqeu9r52onl25.jpg</url>
+                                    </image>
+                    <image id="16">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40lp21d8gm51mohhj429.jpg</url>
+                                    </image>
+                    <image id="17">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j3qbts1i630jte1qq6vkf4i71g.jpg</url>
+                                    </image>
+                    <image id="18">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivadqe40le8dprds5qdsq9t20.jpg</url>
+                                    </image>
+                    <image id="19">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j3qbs5gk1cr6gj8nsne80ebm1g.jpg</url>
+                                    </image>
+            </images>
+
+                    <video_url>https://www.youtube.com/watch?v=WNTHHg3p3Lk</video_url>
+        
+        </property>
+
+
+<property>
+
+    <id>12922</id>
+
+    <date>2026-02-10 10:00:34</date>
+
+    <ref>2401C</ref>
+
+    <price>222000</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Commercial premises / Commercial unit / Retail space]]></type>
+
+    <town>Guardamar del Segura</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>Guardamar del Seguras*</location_detail>
+
+    <beds>3</beds>
+
+    <baths>1</baths>
+
+    <pool></pool>
+            <location>
+            <latitude>38.0869605153745</latitude>
+            <longitude>-0.6542326577530518</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            X            </consumption>
+            <emissions>
+                X            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>112</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/12922/commercial-premises-in-a-prime-location-on-the-main-access-road-to-guardamar-del-segura/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  Spacious 112 m² commercial unit (according to the land registry) located in one of the busiest and most visible areas of Guardamar del Segura, right on the main access road to the town—a mandatory route for both residents and tourists.&#13;&#13;
+Just a few steps from the municipal bus station and the popular Reina Sofía Park, and only 600 meters from the beaches, this property benefits from high footfall and constant vehicle traffic throughout the year.&#13;&#13;
+A great opportunity to establish a successful business or make a sound medium/long-term investment thanks to its commercial potential, high visibility, and proximity to key urban landmarks.&#13;&#13;
+Perfect for retail, hospitality, office, or any business requiring maximum exposure and easy accessibility.&#13;&#13;
+Privileged location with strong growth potential. ]]></en>        <es><![CDATA[ Se ofrece amplio local comercial de 112 m² (según catastro), ubicado en una de las zonas más transitadas y visibles de Guardamar del Segura: justo sobre la vía principal de acceso al municipio, paso obligado para residentes y turistas.&#13;&#13;
+Situado a escasos metros de la estación de autobuses municipales y del reconocido Parque Reina Sofía, y a tan solo 600 metros de las playas, lo que garantiza un constante flujo peatonal y vehicular durante todo el año.&#13;&#13;
+Este local representa una excelente oportunidad tanto para implantar un nuevo negocio como para inversión a medio o largo plazo gracias a su alto potencial comercial, visibilidad y proximidad a los principales puntos de interés de la ciudad.&#13;&#13;
+Ideal para comercio, restauración, oficina o cualquier actividad que requiera buena exposición y fácil acceso.&#13;&#13;
+Ubicación privilegiada con gran proyección de crecimiento. ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Central heating</feature>
+            <feature>Smoke outlet</feature>
+            <feature>Unfurnished</feature>
+            <feature>Storage room</feature>
+            <feature>Distance to the sea</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9umsle1uhn1sjv88s165v1u.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um9jg1g1b1o6e19ai1vso22.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9umacs4di1s1o1rkibs71t.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9umvuo104fvio7dm1mlj24.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9umvq0d2e17rfbda8i220.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9umgef1siq12ibct46a321.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um1pllhj0gti16fj13mu23.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9ummu4vfh11jo1hvduf25.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um1brokb1d4c1vr1f3726.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9umpma1nf4sot1rd5t5h27.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um1rl217ve1imf591iel28.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um1hiv19c31emhsrbn8a29.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um1tue2lf1v4gauk1b242a.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivl6e9um1rir2lfepeq32j2m1v.jpg</url>
+                                    </image>
+            </images>
+
+    
+        </property>
+
+
+<property>
+
+    <id>12948</id>
+
+    <date>2026-02-10 10:00:02</date>
+
+    <ref>2402C</ref>
+
+    <price>99900</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Commercial premises / Commercial unit / Retail space]]></type>
+
+    <town>Guardamar del Segura</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>Guardamar Del Segura</location_detail>
+
+    <beds>1</beds>
+
+    <baths>1</baths>
+
+    <pool></pool>
+            <location>
+            <latitude>38.09227654946793</latitude>
+            <longitude>-0.6552005464110474</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            X            </consumption>
+            <emissions>
+                X            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>62</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/12948/your-perfect-spot-in-guardamar/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  Let me show you a great little place: 45 m² (according to the registry), right on the main road into Guardamar del Segura — the one everyone uses, locals and tourists alike. You literally get traffic and visibility all year round!&#13;&#13;
+It’s just steps from the bus station, the lovely Reina Sofía Park, and only 600 m from the beach. And guess what? There’s a kids' playground right in front of the premises, so you’ve got families passing by constantly in a peaceful, friendly setting.&#13;&#13;
+It’s the kind of place where you could open a café, a small shop, a beauty salon, or even an office. Easy access, great foot traffic, and in a growing area — a smart move whether it’s for your own business or as a future investment.&#13;&#13;
+If you’ve been waiting for the right location… here it is! ]]></en>        <es><![CDATA[ Te presento un local comercial que lo tiene todo: 45 m² (según catastro), ubicado justo sobre la vía principal de acceso a Guardamar del Segura. Es una zona por donde pasa todo el mundo: vecinos, turistas, familias... ¡nadie se lo salta!&#13;&#13;
+Estás a unos pasos de la estación de autobuses municipales, del bonito Parque Reina Sofía y a solo 600 m de la playa. Además, justo enfrente hay un parque infantil, lo que genera movimiento constante de personas en un entorno tranquilo y muy familiar.&#13;&#13;
+Es perfecto para montar un pequeño negocio: una cafetería, una tienda, una oficina, una peluquería… tú decides. La visibilidad es excelente y la zona está en crecimiento, así que también es una buena inversión de futuro.&#13;&#13;
+Si estabas esperando una buena ubicación con potencial, accesible y con buen ambiente, ¡este es tu sitio! ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Smoke outlet</feature>
+            <feature>Distance to the sea</feature>
+            <feature>Blinds</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afj1rqr2e81tgl18jt1vnd1n.JPG</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afjkc11f62i3v1im1h3h1o.JPG</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afj142mveeuvhf1t1cde1p.JPG</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afjmv718f91n8j1l0p1me51q.JPG</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afja9h1n868qn1ba6e2m1r.JPG</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afj1lp5vlr1r2ptv1cvs1s.JPG</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afj7uk1aosat91bbpc5s1t.JPG</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1ivst5afj14qk3kifv0t78rsk1u.JPG</url>
+                                    </image>
+            </images>
+
+    
+        </property>
+
+
+<property>
+
+    <id>13039</id>
+
+    <date>2026-02-10 10:00:23</date>
+
+    <ref>2428C</ref>
+
+    <price>179000</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Apartment]]></type>
+
+    <town>Torrevieja</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>Playa del Cura</location_detail>
+
+    <beds>2</beds>
+
+    <baths>1</baths>
+
+    <pool></pool>
+            <location>
+            <latitude>37.978193</latitude>
+            <longitude>-0.666218</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            X            </consumption>
+            <emissions>
+                X            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>84</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/13039/renovated-apartment-just-100-m-from-playa-del-cura/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  We present this cozy apartment on the first floor with elevator, renovated and ready to move in. With 84 m² of built area, it offers 2 bedrooms, 1 full bathroom, a practical independent kitchen with a 4 m² storage area, and a 6 m² northeast-facing terrace — perfect for enjoying fresh air throughout the day.&#13;&#13;
+Its location is unbeatable: just 100 meters from Playa del Cura, one of Torrevieja’s most iconic beaches. You'll also find restaurants, supermarkets, public transport, medical centers, and leisure areas all within walking distance.&#13;&#13;
+A comfortable, well-connected home in the heart of the city — ideal both as a year-round residence and a holiday property by the sea. ]]></en>        <es><![CDATA[ Te presentamos este acogedor apartamento en primera planta con ascensor, reformado y listo para entrar a vivir. Con 84 m² construidos, la vivienda se distribuye en 2 dormitorios, 1 baño completo, cocina independiente y funcional con espacio de almacenaje de 4 m², y una terraza de 6 m² orientada al noreste, ideal para disfrutar del aire libre en cualquier momento del día.&#13;&#13;
+La ubicación es inmejorable: a tan solo 100 metros de la Playa del Cura, una de las más conocidas de Torrevieja. Además, tendrás restaurantes, supermercados, transporte público, centros médicos y zonas de ocio a solo unos pasos.&#13;&#13;
+Una vivienda cómoda, céntrica y muy bien conectada, perfecta tanto como residencia habitual como para vacaciones en la costa.&#13;&#13;
+ ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Furnished</feature>
+            <feature>Lift</feature>
+            <feature>Home appliances</feature>
+            <feature>Terrace</feature>
+            <feature>Distance to the sea</feature>
+            <feature>Blinds</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j3q9sombk9m1u4i18d7crb17mv1g.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h119p1a8c1qe516j61ie32g.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73hveg1aeiin11vrn6gu2c.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73hd0f16l0f9q1f9511i2e.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h4kgruh17g7o8v1f5n2j.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73hkhuccn1i6d1b57q3e2d.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h19l01vrv1iul1vslh6h2l.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h192n1qn61l701mj7ov22f.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h18vb1henstraavr052b.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73httn1aa610an8jmk92k.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h3h31c241k6etaed362n.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h1th011vg4gp1bceitp2a.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h1p42rc11b56138finj2h.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h11hmmp1fl51gt1ksg2i.jpg</url>
+                                    </image>
+                    <image id="15">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h1brofoa1l6ucc110h02m.jpg</url>
+                                    </image>
+                    <image id="16">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73h1rru1cl45g21onk11g929.jpg</url>
+                                    </image>
+                    <image id="17">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0mip73hv8n4d31gub1kghh6l2p.jpg</url>
+                                    </image>
+                    <image id="18">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j3qb0ilkt711i7am1u1ia4ekd1g.jpg</url>
+                                    </image>
+            </images>
+
+                    <video_url>https://www.youtube.com/watch?v=7AsyL-8lLbE</video_url>
+        
+        </property>
+
+
+<property>
+
+    <id>13049</id>
+
+    <date>2025-12-17 17:50:14</date>
+
+    <ref>2411C</ref>
+
+    <price>490000</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Villa]]></type>
+
+    <town>San Fulgencio</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>La Marina</location_detail>
+
+    <beds>5</beds>
+
+    <baths>5</baths>
+
+    <pool>1</pool>
+            <location>
+            <latitude>38.141435197566295</latitude>
+            <longitude>-0.6683157487294022</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            F            </consumption>
+            <emissions>
+                E            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>273</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/13049/detached-villa-in-la-marina-in-san-fulgencio/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  We present a detached villa located on a private plot of 885 m², situated in the La Marina area of San Fulgencio. The property offers 5 bedrooms and 5 bathrooms, including an outdoor bathroom that can be used as a pool bathroom or for guests. The layout makes the property suitable both for a large family and as a holiday home.&#13;&#13;
+The interior features a spacious and bright living room with a fireplace, a dining area, a fully equipped kitchen, and a glazed patio that can be enjoyed all year round. Additionally, there is a laundry room and a utility room. The property also includes a terrace and a private solarium, providing ideal space for relaxation and sunbathing.&#13;&#13;
+Outside, the property offers a private swimming pool, a well-maintained garden, and a closed garage with space for two cars.&#13;&#13;
+The property provides ample space, privacy, and comfort, while offering convenient access to local services and infrastructure.&#13;&#13;
+Contact us to arrange a viewing of the property. ]]></en>        <es><![CDATA[ Presentamos una villa independiente situada en una parcela privada de 885 m², ubicada en la zona de La Marina, en San Fulgencio. La propiedad dispone de 5 dormitorios y 5 baños, incluyendo un baño exterior que puede utilizarse como baño de piscina o para invitados. La distribución de la vivienda la hace adecuada tanto para una familia numerosa como para uso vacacional.&#13;&#13;
+El interior ofrece un salón amplio y luminoso con chimenea, comedor, cocina totalmente equipada y un patio acristalado que puede utilizarse durante todo el año. Además, cuenta con lavadero y un cuarto de servicio. La propiedad dispone de terraza y solárium privado, proporcionando un espacio ideal para el descanso y el disfrute del sol.&#13;&#13;
+En el exterior se encuentra una piscina privada, un jardín bien cuidado y un garaje cerrado con capacidad para dos coches.&#13;&#13;
+La propiedad ofrece amplitud, privacidad y confort, con fácil acceso a servicios e infraestructuras locales.&#13;&#13;
+Contacte con nosotros para concertar una visita a la propiedad. ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Furnished</feature>
+            <feature>Barbecue</feature>
+            <feature>Balcony</feature>
+            <feature>Heating</feature>
+            <feature>Fireplace</feature>
+            <feature>Home appliances</feature>
+            <feature>Garage</feature>
+            <feature>Garden</feature>
+            <feature>Laundry</feature>
+            <feature>Pool</feature>
+            <feature>Private pool</feature>
+            <feature>Porch</feature>
+            <feature>Smoke outlet</feature>
+            <feature>Solarium</feature>
+            <feature>Basement</feature>
+            <feature>Terrace</feature>
+            <feature>Distance to the sea</feature>
+            <feature>Blinds</feature>
+            <feature>Outdoor parking</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps57om5k12qbgha1ife2t.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps15er1fe11df885i17413u.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1jdqp003fd82e42c30.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps12ue1na16gt1ke1189i2s.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps92udlaj0c159c1u4a2v.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1pseqdg4nov5i61ca52u.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1pskkq11htnn8v60bta31.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1kf81lgo1sn6sa4ohb32.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1pssc91t0oc16uok2o839.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1le41d5579r1d70u2v38.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psjvi188c0ibgc1bor35.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps7us4drc5h14gv13ou36.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psf81h1bbb51kvjrvg37.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psc801rvi6cpt3n143u3h.jpg</url>
+                                    </image>
+                    <image id="15">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps86p1d1d1f1n1av41k083i.jpg</url>
+                                    </image>
+                    <image id="16">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psm0opje6uk1e62ej83e.jpg</url>
+                                    </image>
+                    <image id="17">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psf6b1s271kvb16nk9j83f.jpg</url>
+                                    </image>
+                    <image id="18">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps12um1b2tahs1k801cjv3d.jpg</url>
+                                    </image>
+                    <image id="19">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1pst9t12mcqi96ua4j33b.jpg</url>
+                                    </image>
+                    <image id="20">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps95054232l1o6qvk83c.jpg</url>
+                                    </image>
+                    <image id="21">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1nv1m2314l51oc55ep3g.jpg</url>
+                                    </image>
+                    <image id="22">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psdtphtq3ck1svs1mmk34.jpg</url>
+                                    </image>
+                    <image id="23">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1gpr180919nu1v4h64o33.jpg</url>
+                                    </image>
+                    <image id="24">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psua71rbokc11b6eg8h3a.jpg</url>
+                                    </image>
+                    <image id="25">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1je6u3l1lm11fq4odn3k.jpg</url>
+                                    </image>
+                    <image id="26">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1pso2d1d601uh71b906if3j.jpg</url>
+                                    </image>
+                    <image id="27">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1pss081ouvsa11avq1e93l.jpg</url>
+                                    </image>
+                    <image id="28">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1vu215cms4i1j4a2ua3m.jpg</url>
+                                    </image>
+                    <image id="29">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1cag1prq6kgsh71gs03n.jpg</url>
+                                    </image>
+                    <image id="30">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1pcp1t5vabif123ca3o.jpg</url>
+                                    </image>
+                    <image id="31">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1af7tt61ds61d561uhb3p.jpg</url>
+                                    </image>
+                    <image id="32">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps13c21dsv1s57qv36mj3q.jpg</url>
+                                    </image>
+                    <image id="33">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1mrv2um1pedg65jl73r.jpg</url>
+                                    </image>
+                    <image id="34">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1n2pm2q4g31p5n1g4c3s.jpg</url>
+                                    </image>
+                    <image id="35">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1anc1bnog9ifkaij3v.jpg</url>
+                                    </image>
+                    <image id="36">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps4be2g6sb7flm77n40.jpg</url>
+                                    </image>
+                    <image id="37">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psap618ou17ovd00hkn41.jpg</url>
+                                    </image>
+                    <image id="38">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1il013qa32kclbtsu42.jpg</url>
+                                    </image>
+                    <image id="39">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1pgkcmu2ug19ir15gq43.jpg</url>
+                                    </image>
+                    <image id="40">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psjp3rjev5pkif87d44.jpg</url>
+                                    </image>
+                    <image id="41">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1opm1gpu14f4ch91b6e45.jpg</url>
+                                    </image>
+                    <image id="42">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1psuk31lp81p3s1i08rkt46.jpg</url>
+                                    </image>
+                    <image id="43">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps17o513ab1edd1fdb9h147.jpg</url>
+                                    </image>
+                    <image id="44">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j0p5f1ps1jp61sfsmt1nc321948.jpg</url>
+                                    </image>
+            </images>
+
+                    <video_url>https://www.youtube.com/watch?v=yLCfPOrKGWg</video_url>
+        
+        </property>
+
+
+<property>
+
+    <id>15102</id>
+
+    <date>2026-01-15 15:43:37</date>
+
+    <ref>2407C</ref>
+
+    <price>296000</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Apartment]]></type>
+
+    <town>Santa Rosalia</town>
+
+    <province>Murcia</province>
+
+    <location_detail>Santa Rosalia</location_detail>
+
+    <beds>2</beds>
+
+    <baths>2</baths>
+
+    <pool>1</pool>
+            <location>
+            <latitude>37.746653673730414</latitude>
+            <longitude>-0.8943902861014593</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            B            </consumption>
+            <emissions>
+                A            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>95</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/15102/apartment-in-santa-rosalia-resort/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  This apartment combines comfort and natural surroundings, offering a truly unique lifestyle in one of the most promising areas of the Costa Cálida.&#13;&#13;
+It features 2 spacious bedrooms and 2 full bathrooms, designed for maximum comfort. The bright living-dining area opens onto a private terrace, perfect for enjoying the Mediterranean sun or dining outdoors while overlooking the beautiful landscaped gardens of the complex.&#13;&#13;
+Residents have access to two communal swimming pools — one of them heated — as well as an outdoor gym, jacuzzi and children’s play area, providing everything you need to enjoy life all year round.&#13;&#13;
+The property also includes a private underground parking space and a storage room, ensuring both convenience and security.&#13;&#13;
+The residential complex itself is a truly unique setting, built around a spectacular turquoise artificial lake, surrounded by private beaches, lush green areas, sports facilities, a mini golf course, and a modern clubhouse with restaurant and bar.&#13;&#13;
+It’s a secure, gated and meticulously maintained environment, created for those who seek well-being, privacy and exclusivity.&#13;&#13;
+Located in the Region of Murcia, where the sun shines all year round, this area offers a warm climate, calm waters, and a bright blue sky that enhances the quality of life every single day. ]]></en>        <es><![CDATA[ Este apartamento combina confort y entorno natural, ofreciendo una experiencia única en una de las zonas con mayor proyección de la Costa Cálida.&#13;&#13;
+La vivienda cuenta con 2 amplios dormitorios y 2 baños completos, diseñados para proporcionar el máximo confort. El luminoso salón-comedor, con amplios ventanales, se abre a una terraza privada perfecta para disfrutar del sol mediterráneo o para relajarse con una cena al aire libre contemplando las vistas a los jardines del residencial.&#13;&#13;
+El complejo ofrece instalaciones de primer nivel, ideales para disfrutar durante todo el año: dos piscinas comunitarias, una de ellas climatizada, un jacuzzi exterior, un gimnasio al aire libre y una zona infantil pensada para los más pequeños. Todo está diseñado para fomentar un estilo de vida activo y saludable.&#13;&#13;
+La propiedad incluye además plaza de aparcamiento subterránea y trastero privado, proporcionando comodidad, seguridad y espacio adicional.&#13;&#13;
+El residencial es un enclave verdaderamente único, construido alrededor de un espectacular lago artificial de aguas turquesas, rodeado de playas privadas, amplias zonas verdes, instalaciones deportivas, campo de minigolf y una moderna casa club con restaurante y bar.&#13;&#13;
+Vivir aquí significa disfrutar de un entorno cerrado, seguro y perfectamente mantenido, pensado para quienes valoran el bienestar, la privacidad y la exclusividad.&#13;&#13;
+Situado en el corazón de la Región de Murcia, donde el sol brilla durante todo el año, este entorno combina el clima cálido, las aguas tranquilas y el azul cristalino del cielo que acompañan cada día a quienes tienen el privilegio de llamarlo hogar. ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Furnished</feature>
+            <feature>Lift</feature>
+            <feature>Balcony</feature>
+            <feature>Garage</feature>
+            <feature>Pool</feature>
+            <feature>Communal swimming pool</feature>
+            <feature>Terrace</feature>
+            <feature>Storage room</feature>
+            <feature>Blinds</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a6vq9o212qnauummc2q.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1v621d3172gutn7ej2b.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1cai1efv1c0111ib198i2c.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9a0vtbp1r2l1en51lok1eig1h41i.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9sfv2k813hqqciog91fep1v701j.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1bdp12qv17th1oqh19es27.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35akq9i5o1hen12v5vc028.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35aqs01umo1clv1v5d1vjc29.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35at3fi1g1ipuo6j167c26.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35avhk1qg2184r15ga1vcf2a.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1bvk16jk11t6lf12bh2d.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35ag5j15re5501h947en2e.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a16v51hon1ake1pf0u8q2f.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a2nhtf51i5v15vkrif2g.jpg</url>
+                                    </image>
+                    <image id="15">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35auif2i416bkhlk138v2h.jpg</url>
+                                    </image>
+                    <image id="16">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1n71o5k6n1km51k042i.jpg</url>
+                                    </image>
+                    <image id="17">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1p7jet01hc9uj51rdk2j.jpg</url>
+                                    </image>
+                    <image id="18">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1v1m3in10h2av3110o2k.jpg</url>
+                                    </image>
+                    <image id="19">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35auk91umhe051e9t17g12l.jpg</url>
+                                    </image>
+                    <image id="20">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a1mp91942slh4841v5i2m.jpg</url>
+                                    </image>
+                    <image id="21">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35ae9812hp1k2m63fliv2n.jpg</url>
+                                    </image>
+                    <image id="22">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a13pf193k1b0tl25a9i2o.jpg</url>
+                                    </image>
+                    <image id="23">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35ah54ife1me72rs1q412p.jpg</url>
+                                    </image>
+                    <image id="24">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8l0u35a18cvi7mrp1139f1qld25.jpg</url>
+                                    </image>
+                    <image id="25">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9a112dogt0uuf3lft9515o82b.jpg</url>
+                                    </image>
+                    <image id="26">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9a0vtbpce21t8f6dhtp11otp1j.jpg</url>
+                                    </image>
+                    <image id="27">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9a0vtbp12oa1cmp18tr1gh43n01k.jpg</url>
+                                    </image>
+                    <image id="28">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9sfv2k8jnm1spfnrs1jafr6f1k.jpg</url>
+                                    </image>
+                    <image id="29">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9sfv2k8l9g1mg91amm1go2104u1l.jpg</url>
+                                    </image>
+                    <image id="30">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j9sfv2k81aqt1s7c7fi19q81cni1m.jpg</url>
+                                    </image>
+            </images>
+
+                    <video_url>https://www.youtube.com/watch?v=A-XL-d_H0z0</video_url>
+        
+        </property>
+
+
+<property>
+
+    <id>15282</id>
+
+    <date>2025-12-01 10:45:52</date>
+
+    <ref>2408C</ref>
+
+    <price>319900</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Terraced house / Townhouse]]></type>
+
+    <town>Torrevieja</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>Aguas Nuevas</location_detail>
+
+    <beds>3</beds>
+
+    <baths>2</baths>
+
+    <pool>1</pool>
+            <location>
+            <latitude>37.99992516207898</latitude>
+            <longitude>-0.6752675456927052</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            X            </consumption>
+            <emissions>
+                X            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>108</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/15282/townhouse-with-solarium-in-torrevieja/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  This stunning two-storey townhouse combines privacy, comfort, and contemporary design in a fully renovated home decorated with exceptional taste. It features three spacious bedrooms with fitted wardrobes and two modern bathrooms, offering a functional and elegant living space.&#13;&#13;
+The fully equipped kitchen connects seamlessly to a bright and stylish living room furnished with high-quality pieces, including two leather sofas.&#13;&#13;
+Enjoy exceptional outdoor areas: a 43 m² front terrace with rattan garden furniture, a private rear patio, an upper-floor balcony, and a 40 m² private solarium — ideal for relaxing and enjoying the Mediterranean climate all year round.&#13;&#13;
+The property is sold fully furnished and equipped, including three TVs (50”–65”), Bosch dishwasher, Ariston Wi-Fi water heater, Panasonic air conditioning, infrared heating in every room.&#13;&#13;
+It also includes an alarm system, surveillance cameras, reinforced anti-theft doors and windows (up to 120 kg), safety bars, Grohe taps, and garden lighting with automatic irrigation and awnings.&#13;&#13;
+Every detail has been meticulously renovated: floors, bathrooms, bedrooms, and outdoor areas. Sold exactly as shown in the photos, ready to move in. A unique home for those seeking quality, elegance, and peace in a prime location. ]]></en>        <es><![CDATA[ Este magnífico adosado de dos plantas combina privacidad, confort y diseño contemporáneo en una vivienda completamente reformada y decorada con un gusto exquisito. Dispone de tres amplios dormitorios con armarios empotrados y dos baños modernos, ofreciendo un espacio funcional y elegante.&#13;&#13;
+La cocina totalmente equipada se integra con un salón luminoso y acogedor, amueblado con piezas de alta calidad, incluyendo dos sofás de cuero.&#13;&#13;
+Los espacios exteriores son un verdadero privilegio: una terraza delantera de 43 m² con muebles de ratán, un patio trasero íntimo, un balcón en la planta superior y un solárium privado de 40 m², perfectos para disfrutar del sol y del estilo de vida mediterráneo durante todo el año.&#13;&#13;
+La vivienda se vende completamente equipada, incluyendo tres televisores (50" a 65"), electrodomésticos de primeras marcas como lavavajillas Bosch y calentador Ariston Wi-Fi, aire acondicionado Panasonic, calefacción por infrarrojos.&#13;&#13;
+En materia de seguridad y confort, cuenta con sistema de alarma, cámaras de vigilancia, puertas y ventanas antirrobo de alta resistencia, rejas de seguridad y grifería Grohe. En el exterior, el jardín con iluminación ambiental, riego automático y toldos aporta el toque perfecto.&#13;&#13;
+Totalmente renovado —suelos, baños, habitaciones y exteriores—, este adosado se entrega listo para entrar a vivir, con todo el mobiliario y decoración que aparece en las fotografías. Una propiedad única para quienes buscan calidad, estilo y tranquilidad en una ubicación privilegiada. ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Furnished</feature>
+            <feature>Lift</feature>
+            <feature>Barbecue</feature>
+            <feature>Balcony</feature>
+            <feature>Heating</feature>
+            <feature>Home appliances</feature>
+            <feature>Garden</feature>
+            <feature>Pool</feature>
+            <feature>Communal swimming pool</feature>
+            <feature>Smoke outlet</feature>
+            <feature>Solarium</feature>
+            <feature>Terrace</feature>
+            <feature>Storage room</feature>
+            <feature>Distance to the sea</feature>
+            <feature>Blinds</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681ol51r07b51e4216022i.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681584l6rset2g010vm2r.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681gqkrella78sb14sl2s.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681al7enjae3ggn70e2t.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf6818t6tsq998pbu1n2m2j.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681fpg1cara5frvjgp92k.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf682eomgl1pc517o66ce30.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68137omkj1smv1jvd1b8332.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681lgdj351f49pte1hrq2l.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf6817la63mq5h10nfjbs2m.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681nfq1eslgs7mp64gc2n.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68kk5e3q1gbb1judj6f39.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681pa81smd1m5g1v101gti38.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf683pu1a9v18771jatk1r2o.jpg</url>
+                                    </image>
+                    <image id="15">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf685bj1ubqob41csi1q8b2p.jpg</url>
+                                    </image>
+                    <image id="16">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68uaqqj7fkbpdcpa62q.jpg</url>
+                                    </image>
+                    <image id="17">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68muor0217nf14p6olj2u.jpg</url>
+                                    </image>
+                    <image id="18">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68ccs1ca9ds60d1p2f3h.jpg</url>
+                                    </image>
+                    <image id="19">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681p5r30q13r1ohs1nfa31.jpg</url>
+                                    </image>
+                    <image id="20">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681u3g1dgo181jcfoh1733.jpg</url>
+                                    </image>
+                    <image id="21">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf686nn9mnru918141u3l34.jpg</url>
+                                    </image>
+                    <image id="22">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68jk7v5tfl13u91c9i35.jpg</url>
+                                    </image>
+                    <image id="23">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68h46qjt396o5413s136.jpg</url>
+                                    </image>
+                    <image id="24">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf687t67us1pr718muct937.jpg</url>
+                                    </image>
+                    <image id="25">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68tpallvft111scooe3a.jpg</url>
+                                    </image>
+                    <image id="26">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68421j021e56kid7b23b.jpg</url>
+                                    </image>
+                    <image id="27">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68141j1l8s1kj3aopvv33c.jpg</url>
+                                    </image>
+                    <image id="28">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf6850312hbilh1eie1gh22v.jpg</url>
+                                    </image>
+                    <image id="29">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681gsj1k6t3vb1nfmie43d.jpg</url>
+                                    </image>
+                    <image id="30">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68c74equneraiv1qos3e.jpg</url>
+                                    </image>
+                    <image id="31">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68gc41ngt12h0d8i1pj83f.jpg</url>
+                                    </image>
+                    <image id="32">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf6830hjhlsbq7a1174d3g.jpg</url>
+                                    </image>
+                    <image id="33">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf681hrr160ghrei01prm3i.jpg</url>
+                                    </image>
+                    <image id="34">
+                                                <url>https://costaiberica.com/media/images/properties/o_1j8qlrf68u9i1jd35t1bavrk72h.jpg</url>
+                                    </image>
+            </images>
+
+    
+        </property>
+
+
+<property>
+
+    <id>15457</id>
+
+    <date>2025-12-03 12:39:50</date>
+
+    <ref>2406C</ref>
+
+    <price>259000</price>
+
+    <currency>EUR</currency>
+
+        <price_freq>sale</price_freq>
+    
+    <type><![CDATA[Apartment]]></type>
+
+    <town>Torrevieja</town>
+
+    <province>Alicante (Costa Blanca)</province>
+
+    <location_detail>Playa de El Cura</location_detail>
+
+    <beds>2</beds>
+
+    <baths>2</baths>
+
+    <pool>1</pool>
+            <location>
+            <latitude>37.97759046712413</latitude>
+            <longitude>-0.6738112701721222</longitude>
+    </location>
+    
+    <energy_rating>
+        <consumption>
+            B            </consumption>
+            <emissions>
+                B            </emissions>
+    </energy_rating>
+
+    <surface_area>
+                <built>82</built>
+                    </surface_area>
+
+    <url>
+        <en>https://costaiberica.com/property/15457/resale-apartment-in-torrevieja/</en>
+    </url>
+
+    <desc>
+        <en><![CDATA[  Modern resale apartment offers a functional and bright layout in a convenient area of Torrevieja. It consists of two bedrooms, including the main one, and two bathrooms equipped with glass shower screens and wall-mounted sinks; one finished with textured white tiles and the other with a wood-effect design.&#13;&#13;
+The bedrooms have a simple, minimalist style, with windows that provide good natural light. One bedroom includes a decorative wall as part of the interior finish.&#13;&#13;
+The open-plan living area includes a lounge, TV unit and floor-to-ceiling sliding glass doors leading to the balcony. The interior features a neutral palette and light ceramic flooring.&#13;&#13;
+The layout is designed for practical use of space. The building offers a communal swimming pool and a rooftop solarium with views towards the sea. The location provides at Ramon Gallud street, easy access to services and is approximately a 4-minute walk from Playa del Cura and the promenade.&#13;&#13;
+The apartment is sold with the furniture and equipment shown in the photos, ready to move into.&#13;&#13;
+Call us to arrange a viewing. ]]></en>        <es><![CDATA[ Apartamento de segunda mano, ofrece una distribución funcional y luminosa en una zona práctica de Torrevieja. Consta de dos dormitorios, incluido el principal, y dos baños equipados con mamparas de cristal y lavabos suspendidos; uno acabado con azulejos blancos texturizados y el otro con diseño efecto madera.&#13;&#13;
+Los dormitorios presentan un estilo sencillo, y las ventanas proporcionan buena entrada de luz natural. Uno de ellos incluye una pared decorativa como parte del acabado interior.&#13;&#13;
+La zona de estar de planta abierta incluye un salón, mueble de TV y puertas correderas de cristal de suelo a techo con acceso al balcón. El interior mantiene una paleta neutra y suelos cerámicos claros.&#13;&#13;
+La distribución permite un uso práctico del espacio. El edificio dispone de piscina comunitaria y solárium en la azotea con vistas en dirección al mar. Se encuentra en centro de Torrevieja en la calle Ramon Gallud, cerca de servicios y a unos 4 minutos a pie de la Playa del Cura y el paseo marítimo.&#13;&#13;
+El apartamento se vende con el mobiliario y equipamiento visibles en las fotografías, listo para entrar a vivir.&#13;&#13;
+Llame y programe una visita. ]]></es>                                                    </desc>
+
+    <features>        <feature>Air conditioning</feature>
+            <feature>Furnished</feature>
+            <feature>Lift</feature>
+            <feature>Balcony</feature>
+            <feature>Heating</feature>
+            <feature>Home appliances</feature>
+            <feature>Communal swimming pool</feature>
+            <feature>Solarium</feature>
+            <feature>Terrace</feature>
+            <feature>Distance to the sea</feature>
+            <feature>Blinds</feature>
+    </features>
+    <images>
+                <image id="1">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvkqb666pg1e9eh4qngf3i.jpg</url>
+                                    </image>
+                    <image id="2">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1int1ahq14oa1n6l16s52e.jpg</url>
+                                    </image>
+                    <image id="3">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl2nn1f8tn7tfucvm2d.jpg</url>
+                                    </image>
+                    <image id="4">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1horu8guna1onh7qa2k.jpg</url>
+                                    </image>
+                    <image id="5">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1kluoua1t30e1f12sm2h.jpg</url>
+                                    </image>
+                    <image id="6">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsllgq1odh19itpqi1qam2u.jpg</url>
+                                    </image>
+                    <image id="7">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1bp37ovks41bkg13b131.jpg</url>
+                                    </image>
+                    <image id="8">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1po5kdt1bbha681pjn2j.jpg</url>
+                                    </image>
+                    <image id="9">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslogviis1kgoc2ksq2f.jpg</url>
+                                    </image>
+                    <image id="10">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslcv0b4pchkjif15r52g.jpg</url>
+                                    </image>
+                    <image id="11">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl2kceku811ngumjt2l.jpg</url>
+                                    </image>
+                    <image id="12">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1cre1kh11gdj1mv6f7p2i.jpg</url>
+                                    </image>
+                    <image id="13">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1rtm1amemqj1v5714sb2v.jpg</url>
+                                    </image>
+                    <image id="14">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl42desr109v1pql1dca30.jpg</url>
+                                    </image>
+                    <image id="15">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1tr940q1154vvc71r2p.jpg</url>
+                                    </image>
+                    <image id="16">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslnsn1nhn149g13cp9gt2r.jpg</url>
+                                    </image>
+                    <image id="17">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1a4ol416agja1pv2t.jpg</url>
+                                    </image>
+                    <image id="18">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1i6hrkamev5td95s2q.jpg</url>
+                                    </image>
+                    <image id="19">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslkuesc1d5v1eapaj82o.jpg</url>
+                                    </image>
+                    <image id="20">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1pif1g2ttqohf11qmd2s.jpg</url>
+                                    </image>
+                    <image id="21">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslm7dpv1efq1mou19d132.jpg</url>
+                                    </image>
+                    <image id="22">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslcmic878vfli61n6p2m.jpg</url>
+                                    </image>
+                    <image id="23">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1lg91oj91rbrlo2vvn33.jpg</url>
+                                    </image>
+                    <image id="24">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1ue81o541jrcbfl1b0c35.jpg</url>
+                                    </image>
+                    <image id="25">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1ecoq9914i97cp18pr36.jpg</url>
+                                    </image>
+                    <image id="26">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl12ndd51r1d138d1rc734.jpg</url>
+                                    </image>
+                    <image id="27">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1huo1nom195f10v9ops37.jpg</url>
+                                    </image>
+                    <image id="28">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1iigvo21g7u1bmd1k6o38.jpg</url>
+                                    </image>
+                    <image id="29">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcslbcb5d315fbmrmnum39.jpg</url>
+                                    </image>
+                    <image id="30">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvcsl1r5lqjvlks1vsj1ank3a.jpg</url>
+                                    </image>
+                    <image id="31">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvkqbdpn1kb0684sls1d7c3f.jpg</url>
+                                    </image>
+                    <image id="32">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvkqb4vv1cb717sr19amvml3g.jpg</url>
+                                    </image>
+                    <image id="33">
+                                                <url>https://costaiberica.com/media/images/properties/o_1jagtvkqb1j8gq8lnab19ig4p73h.jpg</url>
+                                    </image>
+            </images>
+
+                    <video_url>https://www.youtube.com/watch?v=gq2WcaiZcWQ</video_url>
+        
+        </property>
+
+</root>
+
