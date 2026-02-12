@@ -18,11 +18,12 @@ class AjaxController
 
         foreach ($properties as $p) {
 
-            $prov = GeoNormalizer::province($p['province'] ?? null);
-            $town = GeoNormalizer::town($p['town'] ?? null);
+            $prov = GeoNormalizer::province($p['location']['province'] ?? null);
+            $town = GeoNormalizer::town($p['location']['town'] ?? null);
 
-            if (!$prov || !$town)
+            if (!$prov || !$town) {
                 continue;
+            }
 
             if (!empty($provinces) && !in_array($prov, $provinces)) {
                 continue;

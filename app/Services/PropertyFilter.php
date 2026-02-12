@@ -7,45 +7,72 @@ class PropertyFilter
     {
         return array_values(array_filter($properties, function ($p) use ($filters) {
 
-            // Precio mínimo
-            if (!empty($filters['price_min']) && $p['price'] < (int)$filters['price_min']) {
+            /* ================= PRICE ================= */
+
+            if (!empty($filters['price_min']) && ($p['price'] ?? 0) < (int) $filters['price_min']) {
                 return false;
             }
 
-            // Precio máximo
-            if (!empty($filters['price_max']) && $p['price'] > (int)$filters['price_max']) {
+            if (!empty($filters['price_max']) && ($p['price'] ?? 0) > (int) $filters['price_max']) {
                 return false;
             }
 
-            // Baños
-            if (!empty($filters['baths']) && $p['baths'] < (int)$filters['baths']) {
+
+            /* ================= BATHS ================= */
+
+            if (!empty($filters['baths']) && ($p['details']['baths'] ?? 0) < (int) $filters['baths']) {
                 return false;
             }
 
-            // Tipo (array)
-            if (!empty($filters['type']) && !in_array($p['type'], (array)$filters['type'])) {
+
+            /* ================= TYPE ================= */
+
+            if (!empty($filters['type']) && !in_array($p['type'] ?? '', (array) $filters['type'])) {
                 return false;
             }
 
-            // Ciudad
-            if (!empty($filters['town']) && !in_array($p['town'], (array)$filters['town'])) {
+
+            /* ================= TOWN ================= */
+
+            if (
+                !empty($filters['town']) &&
+                !in_array($p['location']['town'] ?? '', (array) $filters['town'])
+            ) {
                 return false;
             }
 
-            // Provincia
-            if (!empty($filters['province']) && !in_array($p['province'], (array)$filters['province'])) {
+
+            /* ================= PROVINCE ================= */
+
+            if (
+                !empty($filters['province']) &&
+                !in_array($p['location']['province'] ?? '', (array) $filters['province'])
+            ) {
                 return false;
             }
 
-            // Estado
-            if (!empty($filters['status']) && !in_array($p['status'] ?? '', (array)$filters['status'])) {
+
+            /* ================= STATUS ================= */
+
+            if (
+                !empty($filters['status']) &&
+                !in_array($p['status'] ?? '', (array) $filters['status'])
+            ) {
                 return false;
             }
 
-            // Features (al menos una coincidente)
+
+            /* ================= FEATURES ================= */
+
             if (!empty($filters['features'])) {
-                $match = array_intersect($filters['features'], $p['features'] ?? []);
-                if (empty($match)) return false;
+                $match = array_intersect(
+                    (array) $filters['features'],
+                    $p['features'] ?? []
+                );
+
+                if (empty($match)) {
+                    return false;
+                }
             }
 
             return true;
