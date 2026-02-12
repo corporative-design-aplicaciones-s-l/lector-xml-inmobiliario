@@ -11,200 +11,110 @@ $selected = fn($name, $v) =>
 
 
 <!-- HERO / BUSCADOR PRINCIPAL -->
-<section style="
-  background: var(--color-primary);
-  color: white;
-  padding-block: var(--space-12);
-  width: 100%;
-">
+<section class="search-hero">
 
-  <div class="container text-center">
-
-    <h1 style="
-      font-size: var(--text-4xl);
-      font-weight: var(--font-weight-bold);
-      margin-bottom: var(--space-4);
-    ">
-      Resales Costa Blanca
-    </h1>
-
-    <p style="
-      font-size: var(--text-xl);
-      color: var(--color-secondary);
-      margin-bottom: var(--space-8);
-    ">
-      Encuentra tu vivienda perfecta en la Costa Blanca
-    </p>
-
-
-    <!-- FORMULARIO -->
-    <form method="GET" action="/" class="card" style="
-        display: grid;
-        gap: var(--space-6);
-        background: white;
-        max-width: 1200px;
-        margin-inline: auto;
-      ">
-
-      <!-- FILA SUPERIOR -->
-      <div style="
-        display: grid;
-        gap: var(--space-4);
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      ">
-
-        <!-- Precio mínimo -->
-        <div>
-          <label>Precio mín.</label>
-          <input type="number" name="price_min" value="<?= htmlspecialchars($f['price_min'] ?? '') ?>"
-            style="width:100%; padding:10px; border:1px solid var(--color-border); border-radius:var(--radius-sm);">
-        </div>
-
-        <!-- Precio máximo -->
-        <div>
-          <label>Precio máx.</label>
-          <input type="number" name="price_max" value="<?= htmlspecialchars($f['price_max'] ?? '') ?>"
-            style="width:100%; padding:10px; border:1px solid var(--color-border); border-radius:var(--radius-sm);">
-        </div>
-
-        <!-- Baños -->
-        <div>
-          <label>Baños</label>
-          <select name="baths"
-            style="width:100%; padding:10px; border:1px solid var(--color-border); border-radius:var(--radius-sm);">
-            <option value="">Cualquiera</option>
-            <?php foreach ([1, 2, 3, 4, 5] as $b): ?>
-              <option value="<?= $b ?>" <?= $selected('baths', $b) ?>>
-                <?= $b ?>   <?= $b == 5 ? '+' : '' ?>
-              </option>
-            <?php endforeach; ?>
-          </select>
-        </div>
-
-      </div>
+  <div class="search-wrapper">
 
 
 
-      <!-- FILA DROPDOWNS -->
-      <div style="
-        display: grid;
-        gap: var(--space-4);
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      ">
+    <!-- FILTROS -->
+    <form method="GET" action="/">
 
-        <!-- ESTADO -->
-        <div class="dropdown">
-          <label>Estado</label>
-          <button type="button" class="dropdown-toggle">Seleccionar estado</button>
-
-          <div class="dropdown-panel">
-            <?php foreach (['new' => 'Nuevo', 'sale' => 'Resale', 'rent' => 'Alquiler'] as $k => $v): ?>
-              <label class="dropdown-item">
-                <input type="checkbox" name="status[]" value="<?= $k ?>" <?= $checked('status', $k) ?>>
-                <?= $v ?>
-              </label>
-            <?php endforeach; ?>
-          </div>
-        </div>
+      <div class="search-bar">
+        <!-- COAST / PROVINCIA -->
+        <select name="province">
+          <option value="">Provincia (todas)</option>
+          <?php foreach ($provinces as $p): ?>
+            <option value="<?= htmlspecialchars($p) ?>" <?= $selected('province', $p) ?>>
+              <?= htmlspecialchars($p) ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
 
 
-        <!-- TIPO -->
-        <div class="dropdown">
-          <label>Tipo de vivienda</label>
-          <button type="button" class="dropdown-toggle">Seleccionar tipo</button>
-
-          <div class="dropdown-panel">
-            <?php foreach ($types as $t): ?>
-              <label class="dropdown-item">
-                <input type="checkbox" name="type[]" value="<?= htmlspecialchars($t) ?>" <?= $checked('type', $t) ?>>
-                <?= htmlspecialchars($t) ?>
-              </label>
-            <?php endforeach; ?>
-          </div>
-        </div>
+        <!-- TOWN -->
+        <select name="town">
+          <option value="">Ciudad (todas)</option>
+          <?php foreach ($towns as $t): ?>
+            <option value="<?= htmlspecialchars($t) ?>" <?= $selected('town', $t) ?>>
+              <?= htmlspecialchars($t) ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
 
 
-        <!-- PROVINCIA -->
-        <div class="dropdown">
-          <label>Provincia</label>
-          <button type="button" class="dropdown-toggle">Seleccionar provincia</button>
-
-          <div class="dropdown-panel">
-            <?php foreach ($provinces as $p): ?>
-              <label class="dropdown-item">
-                <input type="checkbox" name="province[]" value="<?= htmlspecialchars($p) ?>" <?= $checked('province', $p) ?>>
-                <?= htmlspecialchars($p) ?>
-              </label>
-            <?php endforeach; ?>
-          </div>
-        </div>
+        <!-- TYPE -->
+        <select name="type">
+          <option value="">Tipo (todos)</option>
+          <?php foreach ($types as $t): ?>
+            <option value="<?= htmlspecialchars($t) ?>" <?= $selected('type', $t) ?>>
+              <?= htmlspecialchars($t) ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
 
 
-        <!-- CIUDAD -->
-        <div class="dropdown">
-          <label>Ciudad</label>
-          <button type="button" class="dropdown-toggle">Seleccionar ciudad</button>
-
-          <div class="dropdown-panel">
-            <?php foreach ($towns as $t): ?>
-              <label class="dropdown-item">
-                <input type="checkbox" name="town[]" value="<?= htmlspecialchars($t) ?>" <?= $checked('town', $t) ?>>
-                <?= htmlspecialchars($t) ?>
-              </label>
-            <?php endforeach; ?>
-          </div>
-        </div>
+        <!-- BEDROOMS -->
+        <select name="beds">
+          <option value="">Dormitorios</option>
+          <?php foreach ([1, 2, 3, 4, 5] as $b): ?>
+            <option value="<?= $b ?>" <?= $selected('beds', $b) ?>>
+              <?= $b ?>   <?= $b == 5 ? '+' : '' ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
 
 
+        <!-- PRICE FROM -->
+        <select name="price_min">
+          <option value="">Precio desde</option>
+          <?php foreach ([0, 50000, 100000, 150000, 200000, 300000, 500000] as $pmin): ?>
+            <option value="<?= $pmin ?>" <?= $selected('price_min', $pmin) ?>>
+              <?= number_format($pmin, 0, ',', '.') ?> €
+            </option>
+          <?php endforeach; ?>
+        </select>
 
-        <!-- FEATURES -->
-        <div class="dropdown">
-          <label>Características</label>
-          <button type="button" class="dropdown-toggle">Seleccionar características</button>
 
-          <div class="dropdown-panel">
-            <?php foreach ($features as $ftr): ?>
-              <label class="dropdown-item">
-                <input type="checkbox" name="features[]" value="<?= htmlspecialchars($ftr) ?>" <?= $checked('features', $ftr) ?>>
-                <?= htmlspecialchars($ftr) ?>
-              </label>
-            <?php endforeach; ?>
-          </div>
-        </div>
+        <!-- PRICE TO -->
+        <select name="price_max">
+          <option value="">Precio hasta</option>
+          <?php foreach ([100000, 150000, 200000, 300000, 500000, 1000000] as $pmax): ?>
+            <option value="<?= $pmax ?>" <?= $selected('price_max', $pmax) ?>>
+              <?= number_format($pmax, 0, ',', '.') ?> €
+            </option>
+          <?php endforeach; ?>
+        </select>
+
+        <!-- REFERENCE -->
+        <input type="text" name="ref" placeholder="Referencia..." value="<?= htmlspecialchars($f['ref'] ?? '') ?>">
 
       </div>
+      <div class="search-links">
 
+        <a href="/">↻ Clean filters</a>
 
-
-      <!-- BOTÓN -->
-      <div style="text-align:end;">
-        <a href="/" class="btn" style="
-          background: var(--color-background);
-          border: 1px solid var(--color-border);
-          color: var(--color-secondary);
-          font-size: var(--text-xl);
-          padding-block: var(--space-1);
-          padding-inline: var(--space-10);
-          text-decoration: none;
-          margin-right: var(--space-8);
-        ">Restablecer</a>
-
-        <button class="btn" style="
-          background: var(--color-accent);
-          color: white;
-          font-size: var(--text-xl);
-          padding-inline: var(--space-10);
-        ">
-          Buscar propiedades
+        <button class="btn-search">
+          Search
         </button>
-
-
       </div>
 
     </form>
 
+
+
+    <!-- LINKS INFERIORES -->
+    <div class="search-links">
+
+      <a href="#"></a>
+
+
+    </div>
+
   </div>
+
 </section>
+
 
 <!-- LISTADO DE RESULTADOS -->
 <section style="
@@ -222,7 +132,7 @@ $selected = fn($name, $v) =>
         PROPIEDADES <span style="color: var(--color-accent);">DESTACADAS</span>
       </h2>
 
-      <p class="text-muted">
+      <p class="text-muted" style="text-size: var(--text-2xl)">
         Selección de viviendas en venta en la Costa Blanca
       </p>
     </header>
@@ -234,7 +144,7 @@ $selected = fn($name, $v) =>
       display: grid;
       margin:0 var(--space-10);
       gap: var(--space-6);
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     ">
 
       <?php if (!empty($properties)): ?>
@@ -242,41 +152,43 @@ $selected = fn($name, $v) =>
 
           <a href="/property/<?= urlencode($p['id'] ?? '') ?>" style="text-decoration:none; color:inherit;">
 
-            <article class="card property-card">
+            <article class="card property-card property-card--featured">
 
               <!-- IMAGEN -->
-              <?php if (!empty($p['images'][0])): ?>
+              <?php if (!empty($p['media']['images'][0])): ?>
                 <div class="property-image">
-                  <img src="<?= htmlspecialchars($p['images'][0]) ?>" alt="">
 
-                  <!-- PRECIO OVERLAY -->
-                  <div class="property-price">
+                  <img src="<?= htmlspecialchars($p['media']['images'][0]) ?>" alt="">
+
+                  <div class="property-price-overlay">
                     <?= number_format($p['price'], 0, ',', '.') ?> €
                   </div>
+
                 </div>
               <?php endif; ?>
 
-
-              <!-- CONTENIDO -->
               <div class="property-body">
 
-                <div class="property-type">
-                  <?= htmlspecialchars($p['type']) ?>
+                <div class="property-location">
+                  <?= htmlspecialchars($p['location']['town'] ?? '') ?>
                 </div>
 
-                <div class="property-town">
-                  <?= htmlspecialchars($p['town']) ?>
+                <div class="property-title">
+                  <?= strtoupper(htmlspecialchars($p['type'])) ?>
+                  <span class="property-status"><?= strtoupper(htmlspecialchars($p['status'])) ?></span>
                 </div>
 
                 <div class="property-meta">
-                  <?= $p['beds'] ?> hab ·
-                  <?= $p['baths'] ?> baños ·
-                  <?= $p['built'] ?> m²
+                  METERS. <?= $p['surface']['built'] ?? '-' ?>m² |
+                  BED. <?= $p['details']['beds'] ?? '-' ?> |
+                  BATH. <?= $p['details']['baths'] ?? '-' ?>
                 </div>
 
               </div>
 
+
             </article>
+
           </a>
 
 
@@ -296,7 +208,7 @@ $selected = fn($name, $v) =>
         <!-- Anterior -->
         <?php if ($page > 1): ?>
           <?php $query['page'] = $page - 1; ?>
-          <a class="btn" style="text-decoration: none; background: var(--color-secondary); color: white;"
+          <a class="btn" style="text-decoration: none; background: var(--color-accent); color: white;"
             href="?<?= http_build_query($query) ?>">
             ← Anterior
           </a>
@@ -313,7 +225,9 @@ $selected = fn($name, $v) =>
         <!-- Primera página -->
         <?php if ($start > 1): ?>
           <?php $query['page'] = 1; ?>
-          <a class="btn" style="margin-inline:4px;" href="?<?= http_build_query($query) ?>">1</a>
+          <a class="btn"
+            style="margin-inline:4px; text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
+            href="?<?= http_build_query($query) ?>">1</a>
 
           <?php if ($start > 2): ?>
             <span style="margin-inline:6px;">…</span>
@@ -329,7 +243,7 @@ $selected = fn($name, $v) =>
        margin-inline:4px;
        text-decoration:none;
        <?= $i === $page
-         ? 'background:var(--color-primary);color:white;'
+         ? 'border:1px solid var(--color-primary); background:var(--color-primary); color:white;'
          : 'border:1px solid var(--color-secondary);color:var(--color-primary);'
          ?>
      ">
@@ -346,7 +260,8 @@ $selected = fn($name, $v) =>
           <?php endif; ?>
 
           <?php $query['page'] = $totalPages; ?>
-          <a class="btn" style="text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
+          <a class="btn"
+            style="margin-inline:4px; text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
             href="?<?= http_build_query($query) ?>">
             <?= $totalPages ?>
           </a>
@@ -358,7 +273,7 @@ $selected = fn($name, $v) =>
         <!-- Siguiente -->
         <?php if ($page < $totalPages): ?>
           <?php $query['page'] = $page + 1; ?>
-          <a class="btn" style="text-decoration: none; background: var(--color-secondary); color: white;"
+          <a class="btn" style="text-decoration: none; background: var(--color-accent); color: white;"
             href="?<?= http_build_query($query) ?>">
             Siguiente →
           </a>

@@ -1,38 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const provinceChecks = document.querySelectorAll(
-        'input[name="province[]"]'
-    );
+    const provinceSelect = document.querySelector('select[name="province"]');
+    const townSelect = document.querySelector('select[name="town"]');
 
-    const townContainer = document.querySelector(
-        "#town-dropdown .dropdown-panel"
-    );
+    if (!provinceSelect || !townSelect) return;
 
-    if (!provinceChecks.length || !townContainer) return;
+    provinceSelect.addEventListener("change", async () => {
 
+        const params = new URLSearchParams();
+        if (provinceSelect.value) {
+            params.append("province[]", provinceSelect.value);
+        }
 
-    provinceChecks.forEach(cb => {
-        cb.addEventListener("change", async () => {
+        const res = await fetch("/ajax/towns?" + params.toString());
+        const towns = await res.json();
 
-            const selected = Array.from(provinceChecks)
-                .filter(c => c.checked)
-                .map(c => c.value);
-
-            const params = new URLSearchParams();
-            selected.forEach(p => params.append("province[]", p));
-
-            const res = await fetch("/ajax/towns?" + params.toString());
-            const towns = await res.json();
-
-            // reconstruir checkboxes
-            townContainer.innerHTML = towns.map(t => `
-        <label class="dropdown-item">
-          <input type="checkbox" name="town[]" value="${t}">
-          ${t}
-        </label>
-      `).join("");
-
-        });
+        townSelect.innerHTML =
+            `<option value="">Town</option>` +
+            towns.map(t => `<option value="${t}">${t}</option>`).join("");
     });
 
 });

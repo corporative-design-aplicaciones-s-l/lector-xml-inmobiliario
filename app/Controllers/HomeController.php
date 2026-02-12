@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Services\TypeNormalizer;
 use App\Services\Xml;
 use App\Services\PropertyFilter;
 use App\Services\GeoNormalizer;
@@ -9,34 +10,40 @@ class HomeController
 {
   public function index(): void
   {
-    // =====================================================
-    // 1. CARGAR TODAS LAS PROPIEDADES (cache local)
-    // =====================================================
+    /* =====================================================
+       1. CARGAR TODAS LAS PROPIEDADES (desde XML/cache)
+    ===================================================== */
     $allProperties = Xml::properties();
 
 
-    // =====================================================
-    // 2. NORMALIZACIÓN DEFENSIVA GEO (importante)
-    // =====================================================
+    /* =====================================================
+       2. NORMALIZACIÓN DEFENSIVA GEO + TYPE
+    ===================================================== */
     foreach ($allProperties as &$p) {
-      $p['province'] = GeoNormalizer::province($p['province'] ?? null);
-      $p['town'] = GeoNormalizer::town($p['town'] ?? null);
+
+      // GEO
+      $p['location']['province'] = GeoNormalizer::province($p['location']['province'] ?? null);
+      $p['location']['town'] = GeoNormalizer::town($p['location']['town'] ?? null);
+
+      // TYPE
+      $p['type'] = TypeNormalizer::type($p['type'] ?? null);
     }
     unset($p);
 
 
-    // =====================================================
-    // 3. CONSTRUIR MAPA PROVINCIA → CIUDADES (SIN FILTRAR)
-    // =====================================================
+    /* =====================================================
+       3. MAPA PROVINCIA → CIUDADES (SIN FILTRAR)
+    ===================================================== */
     $provinceMap = [];
 
     foreach ($allProperties as $p) {
 
-      $prov = $p['province'] ?? null;
-      $town = $p['town'] ?? null;
+      $prov = $p['location']['province'] ?? null;
+      $town = $p['location']['town'] ?? null;
 
-      if (!$prov || !$town)
+      if (!$prov || !$town) {
         continue;
+      }
 
       $provinceMap[$prov][$town] = true;
     }
@@ -50,15 +57,18 @@ class HomeController
     ksort($provinceMap);
 
 
-    // =====================================================
-    // 4. LISTAS DE FILTROS BASE (SIN FILTRAR)
-    // =====================================================
+    /* =====================================================
+       4. LISTAS BASE DE FILTROS (SIN FILTRAR)
+    ===================================================== */
+
+    // Tipos únicos
     $types = array_unique(array_column($allProperties, 'type'));
     sort($types);
 
+    // Provincias
     $provinces = array_keys($provinceMap);
 
-    // Features únicas (ya normalizadas previamente)
+    // Features únicas (ya normalizadas)
     $features = [];
     foreach ($allProperties as $p) {
       foreach ($p['features'] ?? [] as $f) {
@@ -69,9 +79,9 @@ class HomeController
     sort($features);
 
 
-    // =====================================================
-    // 5. CIUDADES SEGÚN PROVINCIA SELECCIONADA
-    // =====================================================
+    /* =====================================================
+       5. CIUDADES SEGÚN PROVINCIA SELECCIONADA
+    ===================================================== */
     $selectedProvinces = (array) ($_GET['province'] ?? []);
 
     if (!empty($selectedProvinces)) {
@@ -89,7 +99,7 @@ class HomeController
 
     } else {
 
-      // todas las ciudades si no hay provincia seleccionada
+      // Todas las ciudades si no hay provincia seleccionada
       $towns = [];
 
       foreach ($provinceMap as $provTowns) {
@@ -102,15 +112,16 @@ class HomeController
       sort($towns);
     }
 
-    // =====================================================
-    // 6. APLICAR FILTROS → RESULTADOS VISIBLES
-    // =====================================================
+
+    /* =====================================================
+       6. APLICAR FILTROS → RESULTADOS VISIBLES
+    ===================================================== */
     $filtered = PropertyFilter::apply($allProperties, $_GET);
 
 
-    // =====================================================
-    // 7. PAGINACIÓN
-    // =====================================================
+    /* =====================================================
+       7. PAGINACIÓN
+    ===================================================== */
     $page = max(1, (int) ($_GET['page'] ?? 1));
     $perPage = 20;
 
@@ -122,17 +133,16 @@ class HomeController
     $properties = array_slice($filtered, $offset, $perPage);
 
 
-    // =====================================================
-    // 8. SEO BÁSICO
-    // =====================================================
+    /* =====================================================
+       8. SEO BÁSICO
+    ===================================================== */
     $title = 'Resales Costa Blanca';
     $description = 'Propiedades en venta en la Costa Blanca';
 
 
-
-    // =====================================================
-    // 9. RENDER
-    // =====================================================
+    /* =====================================================
+       9. RENDER
+    ===================================================== */
     ob_start();
     require VIEW_PATH . '/home.php';
     $content = ob_get_clean();

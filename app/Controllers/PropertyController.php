@@ -7,28 +7,21 @@ class PropertyController
 {
     public function show(string $id): void
     {
-        // =====================================================
-        // 1. Cargar todas las propiedades desde cache
-        // =====================================================
+        /* =====================================================
+           1. Obtener propiedades
+        ===================================================== */
         $properties = Xml::properties();
 
 
-        // =====================================================
-        // 2. Buscar propiedad por ID
-        // =====================================================
-        $property = null;
-
-        foreach ($properties as $p) {
-            if (($p['id'] ?? null) === $id) {
-                $property = $p;
-                break;
-            }
-        }
+        /* =====================================================
+           2. Buscar propiedad por ID
+        ===================================================== */
+        $property = $this->findProperty($properties, $id);
 
 
-        // =====================================================
-        // 3. 404 si no existe
-        // =====================================================
+        /* =====================================================
+           3. 404 si no existe
+        ===================================================== */
         if (!$property) {
             http_response_code(404);
             echo 'Propiedad no encontrada';
@@ -36,29 +29,50 @@ class PropertyController
         }
 
 
-        // =====================================================
-        // 4. SEO básico dinámico
-        // =====================================================
-        $title = ($property['type'] ?? 'Propiedad')
-            . ' en '
-            . ($property['town'] ?? 'Costa Blanca');
-
-        $description = 'Compra '
-            . strtolower($property['type'] ?? 'propiedad')
-            . ' en '
-            . ($property['town'] ?? 'Costa Blanca')
-            . ' por '
-            . number_format($property['price'] ?? 0, 0, ',', '.')
-            . ' €.';
+        /* =====================================================
+           4. SEO dinámico
+        ===================================================== */
+        $seo = $this->buildSeo($property);
 
 
-        // =====================================================
-        // 5. Render vista show
-        // =====================================================
+        /* =====================================================
+           5. Render vista
+        ===================================================== */
         ob_start();
         require VIEW_PATH . '/property/show.php';
         $content = ob_get_clean();
 
         require VIEW_PATH . '/layout/layout.php';
+    }
+
+
+    /* =====================================================
+       Buscar propiedad
+    ===================================================== */
+    private function findProperty(array $properties, string $id): ?array
+    {
+        foreach ($properties as $p) {
+            if (($p['id'] ?? null) === $id) {
+                return $p;
+            }
+        }
+
+        return null;
+    }
+
+
+    /* =====================================================
+       SEO builder
+    ===================================================== */
+    private function buildSeo(array $property): array
+    {
+        $type = $property['type'] ?? 'Propiedad';
+        $town = $property['location']['town'] ?? 'Costa Blanca';
+        $price = number_format($property['price'] ?? 0, 0, ',', '.');
+
+        return [
+            'title' => "{$type} en {$town}",
+            'description' => "Compra " . strtolower($type) . " en {$town} por {$price} €.",
+        ];
     }
 }

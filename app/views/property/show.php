@@ -1,230 +1,175 @@
-<?php
-// Seguridad mínima
-if (!isset($property)) {
-    echo 'Propiedad no disponible';
-    return;
-}
-?>
+<?php require_once VIEW_PATH . '/components/icon.php'; ?>
 
-<section style="padding-block: var(--space-12); background: var(--color-surface);">
+<section class="property-page">
 
     <div class="container">
 
-        <!-- ================= GALERÍA ================= -->
-        <?php if (!empty($property['images'])): ?>
-            <div style="margin-bottom: var(--space-8);">
+        <!-- ================= HEADER ================= -->
+        <header class="property-hero">
 
-                <!-- Imagen principal -->
-                <div
-                    style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-4);        ">
-                    <img src="<?= htmlspecialchars($property['images'][0]) ?>"
-                        data-lightbox="<?= htmlspecialchars($property['images'][0]) ?>" ...>
-
+            <div class="property-hero-left">
+                <div class="property-location">
+                    <?= htmlspecialchars($property['location']['town'] ?? '') ?>,
+                    <?= htmlspecialchars($property['location']['province'] ?? '') ?>
                 </div>
 
-                <!-- Miniaturas -->
-                <?php if (count($property['images']) > 1): ?>
-                    <div style="
-            display:grid;
-            gap: var(--space-3);
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-          ">
-                        <?php foreach (array_slice($property['images'], 1, 8) as $img): ?>
-                            <div style="
-                aspect-ratio: 1 / 1;
-                overflow:hidden;
-                border-radius: var(--radius-md);
-              ">
-                                <img src="<?= htmlspecialchars($img) ?>" data-lightbox="<?= htmlspecialchars($img) ?>"
-                                    style="width:100%; height:100%; object-fit:cover; cursor:pointer;">
-
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-
+                <h1 class="property-title">
+                    <?= htmlspecialchars($property['type'] ?? 'Property') ?> · NEW BUILD
+                </h1>
             </div>
-        <?php endif; ?>
 
+            <div class="property-hero-right">
 
-        <!-- ================= CABECERA ================= -->
-        <header style="margin-bottom: var(--space-8);">
+                <div class="property-ref">
+                    Ref. <?= htmlspecialchars($property['ref'] ?? '-') ?>
+                </div>
 
-            <h1 style="
-        font-size: var(--text-3xl);
-        font-weight: var(--font-weight-semibold);
-        margin-bottom: var(--space-2);
-      ">
-                <?= htmlspecialchars($property['type']) ?>
-                en <?= htmlspecialchars($property['town']) ?>
-            </h1>
+                <div class="property-price">
+                    <?= number_format($property['price'] ?? 0, 0, ',', '.') ?>
+                    <?= htmlspecialchars($property['currency'] ?? '€') ?>
+                </div>
 
-            <p class="text-muted">
-                <?= htmlspecialchars($property['province'] ?? 'Costa Blanca') ?>
-            </p>
-
-            <div style="
-        font-size: var(--text-3xl);
-        font-weight: var(--font-weight-bold);
-        color: var(--color-accent);
-        margin-top: var(--space-3);
-      ">
-                <?= number_format($property['price'] ?? 0, 0, ',', '.') ?> €
             </div>
 
         </header>
 
 
-        <!-- ================= GRID INFO ================= -->
-        <div style="
-      display:grid;
-      gap: var(--space-8);
-      grid-template-columns: 2fr 1fr;
-    ">
+        <!-- ================= GALERÍA ================= -->
+        <?php $images = $property['media']['images'] ?? []; ?>
 
-            <!-- ========= DESCRIPCIÓN ========= -->
-            <div>
+        <?php if (!empty($images)): ?>
+            <section class="property-gallery">
 
-                <h2 style="margin-bottom: var(--space-4);">Descripción</h2>
+                <!-- Imagen principal -->
+                <div class="gallery-main">
+                    <img src="<?= htmlspecialchars($images[0]) ?>" data-lightbox="<?= htmlspecialchars($images[0]) ?>"
+                        alt="Property image">
+                </div>
 
-                <p style="line-height: var(--line-height-relaxed);">
-                    <?= nl2br(htmlspecialchars($property['description'] ?? 'Sin descripción disponible.')) ?>
-                </p>
+                <!-- Miniaturas laterales -->
+                <?php if (count($images) > 1): ?>
+                    <div class="gallery-side">
 
-
-                <!-- ========= FEATURES ========= -->
-                <?php if (!empty($property['features'])): ?>
-                    <h3 style="margin-top: var(--space-8); margin-bottom: var(--space-4);">
-                        Características
-                    </h3>
-
-                    <ul style="
-            display:grid;
-            gap: var(--space-2);
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            list-style:none;
-            padding:0;
-          ">
-                        <?php foreach ($property['features'] as $f): ?>
-                            <li style="
-                background: white;
-                border:1px solid var(--color-border);
-                border-radius: var(--radius-md);
-                padding: var(--space-2) var(--space-3);
-                font-size: var(--text-sm);
-              ">
-                                <?= htmlspecialchars($f) ?>
-                            </li>
+                        <?php foreach (array_slice($images, 1, 2) as $img): ?>
+                            <img src="<?= htmlspecialchars($img) ?>" data-lightbox="<?= htmlspecialchars($img) ?>"
+                                alt="Property image">
                         <?php endforeach; ?>
-                    </ul>
+
+                    </div>
                 <?php endif; ?>
+
+            </section>
+        <?php endif; ?>
+
+
+        <!-- ================= OVERVIEW ================= -->
+        <section class="property-section property-overview">
+
+            <h2 class="section-title">Overview</h2>
+
+            <!-- ===== FEATURES BADGES ===== -->
+            <?php if (!empty($property['features'])): ?>
+                <div class="overview-badges">
+                    <?php foreach (array_slice($property['features'], 0, 6) as $f): ?>
+                        <span class="overview-badge"><?= htmlspecialchars(strtoupper($f)) ?></span>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
+
+            <!-- ===== ICON SUMMARY ===== -->
+            <div class="overview-icons">
+
+                <div class="overview-item">
+                    <?php icon('ruler'); ?>
+                    <div class="overview-text">
+                        <span class="overview-label">Meters</span>
+                        <span class="overview-value"><?= $property['surface']['built'] ?? '-' ?> m²</span>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <?php icon('bed'); ?>
+                    <div class="overview-text">
+                        <span class="overview-label">Bed</span>
+                        <span class="overview-value"><?= $property['details']['beds'] ?? '-' ?></span>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <?php icon('bath'); ?>
+                    <div class="overview-text">
+                        <span class="overview-label">Bath</span>
+                        <span class="overview-value"><?= $property['details']['baths'] ?? '-' ?></span>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <?php icon('waves'); ?>
+                    <div class="overview-text">
+                        <span class="overview-label">Pool</span>
+                        <span class="overview-value"><?= !empty($property['details']['pool']) ? 'Yes' : 'No' ?></span>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <?php icon('car'); ?>
+                    <div class="overview-text">
+                        <span class="overview-label">Garage</span>
+                        <span class="overview-value"><?= !empty($property['details']['garage']) ? 'Yes' : 'No' ?></span>
+                    </div>
+                </div>
 
             </div>
 
 
-            <!-- ========= SIDEBAR ========= -->
-            <aside>
+            <!-- ===== DETAILS GRID ===== -->
+            <div class="overview-grid">
 
-                <div class="card">
+                <div>Year of construction: &nbsp;<strong><?= $property['year'] ?? '2026' ?></strong></div>
+                <div>Bedrooms: &nbsp;<strong><?= $property['details']['beds'] ?? '-' ?></strong></div>
+                <div>Bathrooms: &nbsp;<strong><?= $property['details']['baths'] ?? '-' ?></strong></div>
+                <div>Built: &nbsp;<strong><?= $property['surface']['built'] ?? '-' ?> m²</strong></div>
 
-                    <h3 style="margin-bottom: var(--space-4);">
-                        Detalles
-                    </h3>
+                <?php foreach ($property['features'] as $feature): ?>
+                    <div class="overview-feature">
+                        <?php icon('check'); ?>
+                        <?= htmlspecialchars(strtoupper($feature)) ?>
+                    </div>
+                <?php endforeach; ?>
 
-                    <ul style="list-style:none; padding:0; line-height: 1.8;">
+            </div>
 
-                        <li><strong>Habitaciones:</strong> <?= $property['beds'] ?? '-' ?></li>
-                        <li><strong>Baños:</strong> <?= $property['baths'] ?? '-' ?></li>
-                        <li><strong>Superficie:</strong> <?= $property['built'] ?? '-' ?> m²</li>
-                        <li><strong>Tipo:</strong> <?= htmlspecialchars($property['type']) ?></li>
-
-                    </ul>
-
-                </div>
+        </section>
 
 
-                <!-- CTA contacto (placeholder) -->
-                <div class="card" style="margin-top: var(--space-6); text-align:center;">
 
-                    <h3 style="margin-bottom: var(--space-3);">
-                        ¿Te interesa?
-                    </h3>
+        <!-- ================= DESCRIPTION ================= -->
+        <section class="property-section">
 
-                    <p class="text-muted" style="margin-bottom: var(--space-4);">
-                        Contacta para más información
-                    </p>
+            <h2 class="section-title">Description</h2>
 
-                    <button class="btn" style="
-            background: var(--color-accent);
-            color:white;
-            width:100%;
-            font-size: var(--text-lg);
-          ">
-                        Solicitar información
-                    </button>
+            <p class="property-description">
+                <?= nl2br(htmlspecialchars(
+                    $property['desc']['es']
+                    ?? $property['desc']['en']
+                    ?? 'Sin descripción.'
+                )) ?>
+            </p>
 
-                </div>
-
-            </aside>
-
-        </div>
+        </section>
 
     </div>
-
-    <!-- ================= LIGHTBOX ================= -->
-    <div id="lightbox" style="
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.9);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-">
-
-        <!-- Imagen -->
-        <img id="lightbox-img" src="" style="
-    max-width:90%;
-    max-height:90%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xl);
-  ">
-
-        <!-- Cerrar -->
-        <button id="lightbox-close" style="
-    position:absolute;
-    top:20px;
-    right:20px;
-    background:none;
-    border:none;
-    color:white;
-    font-size:40px;
-    cursor:pointer;
-  ">
-            ×
-        </button>
-
-        <!-- Flechas -->
-        <button id="lightbox-prev" style="
-    position:absolute;
-    left:20px;
-    background:none;
-    border:none;
-    color:white;
-    font-size:40px;
-    cursor:pointer;
-  ">‹</button>
-
-        <button id="lightbox-next" style="
-    position:absolute;
-    right:20px;
-    background:none;
-    border:none;
-    color:white;
-    font-size:40px;
-    cursor:pointer;
-  ">›</button>
-    </div>
-
 
 </section>
+
+
+<!-- ================= LIGHTBOX ================= -->
+<div id="lightbox" class="lightbox">
+    <button id="lightbox-close">✕</button>
+    <button id="lightbox-prev">‹</button>
+
+    <img id="lightbox-img" src="" alt="Property image">
+
+    <button id="lightbox-next">›</button>
+</div>
