@@ -2,6 +2,8 @@
 namespace App\Services;
 
 use App\Services\FeatureNormalizer;
+use App\Services\TextNormalizer;
+
 
 class Xml
 {
@@ -72,6 +74,9 @@ class Xml
                         'baths' => (int) $p->baths,
                         'pool' => ((int) ($p->pool ?? 0)) === 1,
                         'garage' => in_array('garage', array_map('strtolower', $features)),
+                        'new_build' => ((int) ($p->new_build ?? 0)) === 1,
+                        'leasehold' => ((int) ($p->leasehold ?? 0)) === 1,
+                        'part_ownership' => ((int) ($p->part_ownership ?? 0)) === 1,
                     ],
 
                     /* ENERGY */
@@ -81,10 +86,12 @@ class Xml
                     ],
 
                     /* DESCRIPTION */
+
                     'desc' => [
-                        'en' => trim((string) ($p->desc->en ?? '')),
-                        'es' => trim((string) ($p->desc->es ?? '')),
+                        'en' => TextNormalizer::description((string) ($p->desc->en ?? '')),
+                        'es' => TextNormalizer::description((string) ($p->desc->es ?? '')),
                     ],
+
 
                     /* FEATURES */
                     'features' => $features,

@@ -305,6 +305,8 @@ label {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .property-image img {
@@ -361,18 +363,19 @@ label {
 .property-badges {
   position: absolute;
   top: 12px;
-  left: 12px;
+  right: 12px;
   display: flex;
   gap: 6px;
+  z-index:9999999;
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.9);
+  background:var(--color-accent);
   padding: 4px 8px;
   border-radius: var(--radius-full);
-  font-size: 12px;
+  font-size: var(--text-lg);
   font-weight: 600;
-  color: var(--color-primary);
+  color: white;
 }
 
 /* FAVORITO */
@@ -397,7 +400,7 @@ label {
 }
 
 .property-status {
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
   margin-left: 6px;
 }
 
@@ -923,5 +926,26 @@ label {
 
   .btn-search {
     width: 100%;
+  }
+}
+
+.properties-grid {
+  display: grid;
+  margin: 0 var(--space-10);
+  gap: var(--space-6);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: 1fr;
   }
 }

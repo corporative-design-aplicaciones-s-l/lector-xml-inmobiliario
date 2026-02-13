@@ -14,7 +14,20 @@
                 </div>
 
                 <h1 class="property-title">
-                    <?= htmlspecialchars($property['type'] ?? 'Property') ?> · NEW BUILD
+                    <?= htmlspecialchars($property['type'] ?? 'Property') ?>
+                    <span class="property-status">
+                        <?php if (!empty($property['details']['new_build'])): ?>
+                            NEW BUILD
+                        <?php endif; ?>
+
+                        <?php if (!empty($property['details']['leasehold'])): ?>
+                            LEASEHOLD
+                        <?php endif; ?>
+
+                        <?php if (!empty($property['details']['part_ownership'])): ?>
+                            PART OWNERSHIP
+                        <?php endif; ?>
+                    </span>
                 </h1>
             </div>
 
@@ -130,13 +143,14 @@
                 <div>Bedrooms: &nbsp;<strong><?= $property['details']['beds'] ?? '-' ?></strong></div>
                 <div>Bathrooms: &nbsp;<strong><?= $property['details']['baths'] ?? '-' ?></strong></div>
                 <div>Built: &nbsp;<strong><?= $property['surface']['built'] ?? '-' ?> m²</strong></div>
-
                 <?php foreach ($property['features'] as $feature): ?>
-                    <div class="overview-feature">
-                        <?php icon('check'); ?>
-                        <?= htmlspecialchars(strtoupper($feature)) ?>
+                    <div style="margin-top: 16px; border: 1px solid var(--color-border); border-radius: 4px; padding: 8px; text-align: center;">
+                        <div class="overview-feature">
+                            <?php icon('check'); ?>
+                            <?= htmlspecialchars(strtoupper($feature)) ?>
+                        </div>
                     </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
 
             </div>
 
@@ -151,8 +165,8 @@
 
             <p class="property-description">
                 <?= nl2br(htmlspecialchars(
-                    $property['desc']['es']
-                    ?? $property['desc']['en']
+                    $property['desc']['en']
+                    ?? $property['desc']['es']
                     ?? 'Sin descripción.'
                 )) ?>
             </p>

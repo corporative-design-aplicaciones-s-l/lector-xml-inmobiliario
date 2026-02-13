@@ -51,6 +51,19 @@ class PropertyFilter
                 return false;
             }
 
+            /* ================= REFERENCE ================= */
+
+            if (!empty($filters['ref'])) {
+
+                $refSearch = strtolower(trim($filters['ref']));
+                $refValue = strtolower($p['ref'] ?? '');
+
+                // Coincidencia parcial (lo normal en inmobiliaria)
+                if (strpos($refValue, $refSearch) === false) {
+                    return false;
+                }
+            }
+
 
             /* ================= STATUS ================= */
 

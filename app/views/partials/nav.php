@@ -9,10 +9,10 @@
         </a>
 
         <!-- Navegación -->
-        <nav style="display:flex; gap:var(--space-4);">
+       <!-- <nav style="display:flex; gap:var(--space-4);">
             <a href="/">Inicio</a>
             <a href="/contacto">Contacto</a>
-        </nav>
+        </nav>-->
 
     </div>
 </header>

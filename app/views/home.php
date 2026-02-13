@@ -15,15 +15,13 @@ $selected = fn($name, $v) =>
 
   <div class="search-wrapper">
 
-
-
     <!-- FILTROS -->
     <form method="GET" action="/">
 
       <div class="search-bar">
         <!-- COAST / PROVINCIA -->
         <select name="province">
-          <option value="">Provincia (todas)</option>
+          <option value="">Province</option>
           <?php foreach ($provinces as $p): ?>
             <option value="<?= htmlspecialchars($p) ?>" <?= $selected('province', $p) ?>>
               <?= htmlspecialchars($p) ?>
@@ -34,7 +32,7 @@ $selected = fn($name, $v) =>
 
         <!-- TOWN -->
         <select name="town">
-          <option value="">Ciudad (todas)</option>
+          <option value="">Town</option>
           <?php foreach ($towns as $t): ?>
             <option value="<?= htmlspecialchars($t) ?>" <?= $selected('town', $t) ?>>
               <?= htmlspecialchars($t) ?>
@@ -45,7 +43,7 @@ $selected = fn($name, $v) =>
 
         <!-- TYPE -->
         <select name="type">
-          <option value="">Tipo (todos)</option>
+          <option value="">Type</option>
           <?php foreach ($types as $t): ?>
             <option value="<?= htmlspecialchars($t) ?>" <?= $selected('type', $t) ?>>
               <?= htmlspecialchars($t) ?>
@@ -56,7 +54,7 @@ $selected = fn($name, $v) =>
 
         <!-- BEDROOMS -->
         <select name="beds">
-          <option value="">Dormitorios</option>
+          <option value="">Bedrooms</option>
           <?php foreach ([1, 2, 3, 4, 5] as $b): ?>
             <option value="<?= $b ?>" <?= $selected('beds', $b) ?>>
               <?= $b ?>   <?= $b == 5 ? '+' : '' ?>
@@ -67,7 +65,7 @@ $selected = fn($name, $v) =>
 
         <!-- PRICE FROM -->
         <select name="price_min">
-          <option value="">Precio desde</option>
+          <option value="">Price from</option>
           <?php foreach ([0, 50000, 100000, 150000, 200000, 300000, 500000] as $pmin): ?>
             <option value="<?= $pmin ?>" <?= $selected('price_min', $pmin) ?>>
               <?= number_format($pmin, 0, ',', '.') ?> €
@@ -78,7 +76,7 @@ $selected = fn($name, $v) =>
 
         <!-- PRICE TO -->
         <select name="price_max">
-          <option value="">Precio hasta</option>
+          <option value="">Price to</option>
           <?php foreach ([100000, 150000, 200000, 300000, 500000, 1000000] as $pmax): ?>
             <option value="<?= $pmax ?>" <?= $selected('price_max', $pmax) ?>>
               <?= number_format($pmax, 0, ',', '.') ?> €
@@ -101,8 +99,6 @@ $selected = fn($name, $v) =>
 
     </form>
 
-
-
     <!-- LINKS INFERIORES -->
     <div class="search-links">
 
@@ -114,8 +110,6 @@ $selected = fn($name, $v) =>
   </div>
 
 </section>
-
-
 <!-- LISTADO DE RESULTADOS -->
 <section style="
   padding-block: var(--space-12);
@@ -123,29 +117,24 @@ $selected = fn($name, $v) =>
 ">
 
   <div class="container text-center">
+<header style="margin-bottom: var(--space-8);">
+  <h2 style="
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-regular);
+  ">
+    FEATURED <span style="color: var(--color-accent);">PROPERTIES</span>
+  </h2>
 
-    <header style="margin-bottom: var(--space-8);">
-      <h2 style="
-        font-size: var(--text-3xl);
-        font-weight: var(--font-weight-regular);
-      ">
-        PROPIEDADES <span style="color: var(--color-accent);">DESTACADAS</span>
-      </h2>
+  <p class="text-muted" style="font-size: var(--text-xl)">
+    Selection of homes for sale on the Costa Blanca
+  </p>
+</header>
 
-      <p class="text-muted" style="text-size: var(--text-2xl)">
-        Selección de viviendas en venta en la Costa Blanca
-      </p>
-    </header>
 
   </div>
   <div>
     <!-- GRID -->
-    <div style="
-      display: grid;
-      margin:0 var(--space-10);
-      gap: var(--space-6);
-      grid-template-columns: repeat(4, 1fr);
-    ">
+    <div class="properties-grid">
 
       <?php if (!empty($properties)): ?>
         <?php foreach (array_slice($properties, 0, 20) as $p): ?>
@@ -163,6 +152,19 @@ $selected = fn($name, $v) =>
                   <div class="property-price-overlay">
                     <?= number_format($p['price'], 0, ',', '.') ?> €
                   </div>
+                  <div class="property-badges">
+                    <?php if (!empty($p['details']['new_build'])): ?>
+                      <span class="badge">NEW BUILD</span>
+                    <?php endif; ?>
+
+                    <?php if (!empty($p['details']['leasehold'])): ?>
+                      · LEASEHOLD
+                    <?php endif; ?>
+
+                    <?php if (!empty($p['details']['part_ownership'])): ?>
+                      · PART OWNERSHIP
+                    <?php endif; ?>
+                  </div>
 
                 </div>
               <?php endif; ?>
@@ -175,12 +177,11 @@ $selected = fn($name, $v) =>
 
                 <div class="property-title">
                   <?= strtoupper(htmlspecialchars($p['type'])) ?>
-                  <span class="property-status"><?= strtoupper(htmlspecialchars($p['status'])) ?></span>
                 </div>
 
                 <div class="property-meta">
-                  METERS. <?= $p['surface']['built'] ?? '-' ?>m² |
-                  BED. <?= $p['details']['beds'] ?? '-' ?> |
+                  METERS. <?= $p['surface']['built'] ?? '-' ?>m² <span style="color: var(--color-accent);">|</span>
+                  BED. <?= $p['details']['beds'] ?? '-' ?> <span style="color: var(--color-accent);">|</span>
                   BATH. <?= $p['details']['baths'] ?? '-' ?>
                 </div>
 
