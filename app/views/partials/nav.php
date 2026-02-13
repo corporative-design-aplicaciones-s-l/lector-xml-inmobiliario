@@ -3,10 +3,14 @@
         style="display:flex; justify-content:space-between; align-items:center; padding-block:var(--space-4);">
 
         <!-- Logo -->
-        <a href="/"
-            style="font-size:var(--text-2xl); font-weight:var(--font-weight-bold); text-decoration:none; color:inherit;">
-            RESALES<span class="color: var(--color-accent)">COSTABLANCA</span>
-        </a>
+       <a href="/"
+   style="font-size:var(--text-2xl); font-weight:var(--font-weight-bold); text-decoration:none;">
+   
+   <span style="color: var(--color-accent);">RESALES</span>
+   <span style="color: var(--color-primary);">COSTABLANCA</span>
+
+</a>
+
 
         <!-- Navegación -->
        <!-- <nav style="display:flex; gap:var(--space-4);">
