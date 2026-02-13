@@ -85,7 +85,7 @@ $selected = fn($name, $v) =>
         </select>
 
         <!-- REFERENCE -->
-        <input type="text" name="ref" placeholder="Referencia..." value="<?= htmlspecialchars($f['ref'] ?? '') ?>">
+        <input type="text" name="ref" placeholder="Reference..." value="<?= htmlspecialchars($f['ref'] ?? '') ?>">
 
       </div>
       <div class="search-links">
