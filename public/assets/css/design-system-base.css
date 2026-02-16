@@ -290,8 +290,12 @@ label {
   padding: var(--space-4);
   font-size: var(--text-xl);
   color: var(--color-text-primary);
+
 }
 
+.property-description p {
+  margin-bottom: var(--space-4);
+}
 
 .property-card:hover {
   transform: translateY(-4px);
@@ -366,11 +370,11 @@ label {
   right: 12px;
   display: flex;
   gap: 6px;
-  z-index:9999999;
+  z-index: 9999999;
 }
 
 .badge {
-  background:var(--color-accent);
+  background: var(--color-accent);
   padding: 4px 8px;
   border-radius: var(--radius-full);
   font-size: var(--text-lg);
@@ -948,4 +952,28 @@ label {
   .properties-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.gallery-thumb {
+  position: relative;
+}
+
+.gallery-more {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+
+  backdrop-filter: blur(2px);
 }

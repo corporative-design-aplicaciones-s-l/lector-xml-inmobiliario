@@ -10,25 +10,23 @@ class TextNormalizer
             return '';
         }
 
-        // 1️⃣ Convertir entidades CR explícitas del XML
+        // Convertir entidades CR/LF del XML
         $text = str_replace(['&#13;', '&#10;'], "\n", $text);
 
-        // 2️⃣ Decodificar por si hay más entidades HTML
+        // Decodificar entidades HTML
         $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-        // 3️⃣ Normalizar saltos
+        // Normalizar saltos
         $text = preg_replace("/\r\n|\r/", "\n", $text);
 
-        // 4️⃣ Limitar saltos múltiples
+        // Limitar saltos múltiples
         $text = preg_replace("/\n{3,}/", "\n\n", $text);
 
         return trim($text);
     }
 
-
-
     /**
-     * Devuelve HTML con <p>
+     * Devuelve HTML limpio listo para imprimir
      */
     public static function descriptionHtml(?string $text): string
     {
@@ -38,10 +36,19 @@ class TextNormalizer
             return '';
         }
 
-        // Separar por párrafos
+        // 🧠 Detectar si ya contiene HTML
+        if (strip_tags($text) !== $text) {
+
+            // Limpiar atributos basura de editores/XML
+            $text = preg_replace('/\sdata-[^=]+="[^"]*"/i', '', $text);
+
+            // Permitir solo etiquetas seguras
+            return strip_tags($text, '<p><br><ul><ol><li><strong><b><em><i>');
+        }
+
+        // Si es texto plano → convertir a párrafos
         $paragraphs = explode("\n\n", $text);
 
-        // Envolver en <p>
         $paragraphs = array_map(
             fn($p) => '<p>' . nl2br(htmlspecialchars(trim($p))) . '</p>',
             $paragraphs

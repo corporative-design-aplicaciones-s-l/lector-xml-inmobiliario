@@ -64,25 +64,13 @@ $selected = fn($name, $v) =>
 
 
         <!-- PRICE FROM -->
-        <select name="price_min">
-          <option value="">Price from</option>
-          <?php foreach ([0, 50000, 100000, 150000, 200000, 300000, 500000] as $pmin): ?>
-            <option value="<?= $pmin ?>" <?= $selected('price_min', $pmin) ?>>
-              <?= number_format($pmin, 0, ',', '.') ?> €
-            </option>
-          <?php endforeach; ?>
-        </select>
-
+        <input type="number" name="price_min" placeholder="Price from"
+          value="<?= htmlspecialchars($f['price_min'] ?? '') ?>" min="0" step="1" />
 
         <!-- PRICE TO -->
-        <select name="price_max">
-          <option value="">Price to</option>
-          <?php foreach ([100000, 150000, 200000, 300000, 500000, 1000000] as $pmax): ?>
-            <option value="<?= $pmax ?>" <?= $selected('price_max', $pmax) ?>>
-              <?= number_format($pmax, 0, ',', '.') ?> €
-            </option>
-          <?php endforeach; ?>
-        </select>
+        <input type="number" name="price_max" placeholder="Price to"
+          value="<?= htmlspecialchars($f['price_max'] ?? '') ?>" min="0" step="1" />
+
 
         <!-- REFERENCE -->
         <input type="text" name="ref" placeholder="Reference..." value="<?= htmlspecialchars($f['ref'] ?? '') ?>">
@@ -117,18 +105,18 @@ $selected = fn($name, $v) =>
 ">
 
   <div class="container text-center">
-<header style="margin-bottom: var(--space-8);">
-  <h2 style="
+    <header style="margin-bottom: var(--space-8);">
+      <h2 style="
     font-size: var(--text-3xl);
     font-weight: var(--font-weight-regular);
   ">
-    FEATURED <span style="color: var(--color-accent);">PROPERTIES</span>
-  </h2>
+        FEATURED <span style="color: var(--color-accent);">PROPERTIES</span>
+      </h2>
 
-  <p class="text-muted" style="font-size: var(--text-xl)">
-    Selection of homes for sale on the Costa Blanca
-  </p>
-</header>
+      <p class="text-muted" style="font-size: var(--text-xl)">
+        Selection of homes for sale on the Costa Blanca
+      </p>
+    </header>
 
 
   </div>
@@ -211,7 +199,7 @@ $selected = fn($name, $v) =>
           <?php $query['page'] = $page - 1; ?>
           <a class="btn" style="text-decoration: none; background: var(--color-accent); color: white;"
             href="?<?= http_build_query($query) ?>">
-            ← Anterior
+            ← Previous
           </a>
         <?php endif; ?>
 
@@ -276,7 +264,7 @@ $selected = fn($name, $v) =>
           <?php $query['page'] = $page + 1; ?>
           <a class="btn" style="text-decoration: none; background: var(--color-accent); color: white;"
             href="?<?= http_build_query($query) ?>">
-            Siguiente →
+            Next →
           </a>
         <?php endif; ?>
 

@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Services\TextNormalizer;
 use App\Services\Xml;
 
 class PropertyController
@@ -18,7 +19,6 @@ class PropertyController
         ===================================================== */
         $property = $this->findProperty($properties, $id);
 
-
         /* =====================================================
            3. 404 si no existe
         ===================================================== */
@@ -27,6 +27,8 @@ class PropertyController
             echo 'Propiedad no encontrada';
             return;
         }
+
+        // $property = $this->normalizeProperty($property);
 
 
         /* =====================================================
@@ -46,6 +48,8 @@ class PropertyController
     }
 
 
+
+
     /* =====================================================
        Buscar propiedad
     ===================================================== */
@@ -61,13 +65,15 @@ class PropertyController
     }
 
 
+
+
     /* =====================================================
        SEO builder
     ===================================================== */
     private function buildSeo(array $property): array
     {
-        $type = $property['type'] ?? 'Propiedad';
-        $town = $property['location']['town'] ?? 'Costa Blanca';
+        $type = $property['type'] ?? 'Property';
+        $town = $property['location']['town'] ?? 'Unknown';
         $price = number_format($property['price'] ?? 0, 0, ',', '.');
 
         return [
@@ -75,4 +81,16 @@ class PropertyController
             'description' => "Compra " . strtolower($type) . " en {$town} por {$price} €.",
         ];
     }
+
+    private function normalizeProperty(array $property): array
+    {
+        foreach (['en', 'es'] as $lang) {
+            if (!empty($property['desc'][$lang])) {
+                $property['desc'][$lang] = TextNormalizer::description($property['desc'][$lang]);
+            }
+        }
+
+        return $property;
+    }
+
 }

@@ -63,16 +63,34 @@
                 <?php if (count($images) > 1): ?>
                     <div class="gallery-side">
 
-                        <?php foreach (array_slice($images, 1, 2) as $img): ?>
-                            <img src="<?= htmlspecialchars($img) ?>" data-lightbox="<?= htmlspecialchars($img) ?>"
-                                alt="Property image">
+                        <?php foreach (array_slice($images, 1, 2) as $i => $img): ?>
+                            <div class="gallery-thumb">
+
+                                <img src="<?= htmlspecialchars($img) ?>" data-lightbox="<?= htmlspecialchars($img) ?>"
+                                    alt="Property image">
+
+                                <?php if (count($images) > 3 && $i === 1): ?>
+                                    <?php $remaining = count($images) - 3; ?>
+
+                                    <button type="button" class="gallery-more" data-open-lightbox="2">
+                                        +
+                                        <?= $remaining ?> photos
+                                    </button>
+
+                                <?php endif; ?>
+
+                            </div>
                         <?php endforeach; ?>
+
 
                     </div>
                 <?php endif; ?>
 
             </section>
         <?php endif; ?>
+        <script>
+            window.PROPERTY_IMAGES = <?= json_encode($images, JSON_UNESCAPED_SLASHES) ?>;
+        </script>
 
 
         <!-- ================= OVERVIEW ================= -->
@@ -144,13 +162,14 @@
                 <div>Bathrooms: &nbsp;<strong><?= $property['details']['baths'] ?? '-' ?></strong></div>
                 <div>Built: &nbsp;<strong><?= $property['surface']['built'] ?? '-' ?> m²</strong></div>
                 <?php foreach ($property['features'] as $feature): ?>
-                    <div style="margin-top: 16px; border: 1px solid var(--color-border); border-radius: 4px; padding: 8px; text-align: center;">
+                    <div
+                        style="margin-top: 16px; border: 1px solid var(--color-border); border-radius: 4px; padding: 8px; text-align: center;">
                         <div class="overview-feature">
                             <?php icon('check'); ?>
                             <?= htmlspecialchars(strtoupper($feature)) ?>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
 
             </div>
 
@@ -163,13 +182,13 @@
 
             <h2 class="section-title">Description</h2>
 
-            <p class="property-description">
-                <?= nl2br(htmlspecialchars(
+            <div class="property-description">
+                <?= \App\Services\TextNormalizer::descriptionHtml(
                     $property['desc']['en']
                     ?? $property['desc']['es']
-                    ?? 'Sin descripción.'
-                )) ?>
-            </p>
+                    ?? null
+                ) ?: '<p>Sin descripción.</p>' ?>
+            </div>
 
         </section>
 
