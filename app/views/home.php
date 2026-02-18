@@ -121,71 +121,24 @@ $selected = fn($name, $v) =>
 
   </div>
   <div>
+    <div class="results-toolbar">
+
+      <div class="results-sort">
+        <label for="sortResults">Sort by</label>
+
+        <select id="sortResults" class="select">
+          <option value="">Default</option>
+          <option value="price_asc">Price ↑</option>
+          <option value="price_desc">Price ↓</option>
+        </select>
+      </div>
+
+    </div>
+
+
     <!-- GRID -->
-    <div class="properties-grid">
-
-      <?php if (!empty($properties)): ?>
-        <?php foreach (array_slice($properties, 0, 20) as $p): ?>
-
-          <a href="/property/<?= urlencode($p['id'] ?? '') ?>" style="text-decoration:none; color:inherit;">
-
-            <article class="card property-card property-card--featured">
-
-              <!-- IMAGEN -->
-              <?php if (!empty($p['media']['images'][0])): ?>
-                <div class="property-image">
-
-                  <img src="<?= htmlspecialchars($p['media']['images'][0]) ?>" alt="">
-
-                  <div class="property-price-overlay">
-                    <?= number_format($p['price'], 0, ',', '.') ?> €
-                  </div>
-                  <div class="property-badges">
-                    <?php if (!empty($p['details']['new_build'])): ?>
-                      <span class="badge">NEW BUILD</span>
-                    <?php endif; ?>
-
-                    <?php if (!empty($p['details']['leasehold'])): ?>
-                      · LEASEHOLD
-                    <?php endif; ?>
-
-                    <?php if (!empty($p['details']['part_ownership'])): ?>
-                      · PART OWNERSHIP
-                    <?php endif; ?>
-                  </div>
-
-                </div>
-              <?php endif; ?>
-
-              <div class="property-body">
-
-                <div class="property-location">
-                  <?= htmlspecialchars($p['location']['town'] ?? '') ?>
-                </div>
-
-                <div class="property-title">
-                  <?= strtoupper(htmlspecialchars($p['type'])) ?>
-                </div>
-
-                <div class="property-meta">
-                  METERS. <?= $p['surface']['built'] ?? '-' ?>m² <span style="color: var(--color-accent);">|</span>
-                  BED. <?= $p['details']['beds'] ?? '-' ?> <span style="color: var(--color-accent);">|</span>
-                  BATH. <?= $p['details']['baths'] ?? '-' ?>
-                </div>
-
-              </div>
-
-
-            </article>
-
-          </a>
-
-
-        <?php endforeach; ?>
-      <?php else: ?>
-        <p>No se han encontrado propiedades con estos filtros.</p>
-      <?php endif; ?>
-
+    <div class="properties-grid" id="propertiesContainer">
+      <?php require VIEW_PATH . '/partials/properties-grid.php'; ?>
     </div>
     <?php if ($totalPages > 1): ?>
       <nav style="margin-top:40px; text-align:center;">
@@ -214,9 +167,9 @@ $selected = fn($name, $v) =>
         <!-- Primera página -->
         <?php if ($start > 1): ?>
           <?php $query['page'] = 1; ?>
-          <a class="btn"
+          <a class="btn js-page-link"
             style="margin-inline:4px; text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
-            href="?<?= http_build_query($query) ?>">1</a>
+            href="/ajax/properties?<?= http_build_query($query) ?>">1</a>
 
           <?php if ($start > 2): ?>
             <span style="margin-inline:6px;">…</span>
@@ -251,7 +204,7 @@ $selected = fn($name, $v) =>
           <?php $query['page'] = $totalPages; ?>
           <a class="btn"
             style="margin-inline:4px; text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
-            href="?<?= http_build_query($query) ?>">
+            href="/ajax/properties?<?= http_build_query($query) ?>">
             <?= $totalPages ?>
           </a>
 
@@ -262,8 +215,8 @@ $selected = fn($name, $v) =>
         <!-- Siguiente -->
         <?php if ($page < $totalPages): ?>
           <?php $query['page'] = $page + 1; ?>
-          <a class="btn" style="text-decoration: none; background: var(--color-accent); color: white;"
-            href="?<?= http_build_query($query) ?>">
+          <a class="btn js-page-link" style="text-decoration: none; background: var(--color-accent); color: white;"
+            href="/ajax/properties?<?= http_build_query($query) ?>">
             Next →
           </a>
         <?php endif; ?>
@@ -274,3 +227,62 @@ $selected = fn($name, $v) =>
 
   </div>
 </section>
+
+<script>
+  async function loadProperties(url, push = true) {
+
+    // Convertimos cualquier URL a endpoint AJAX
+    const ajaxUrl = new URL('/ajax/properties', window.location.origin);
+
+    // copiamos los query params (?page=, ?sort=, etc)
+    const params = new URL(url, window.location.origin).searchParams;
+    ajaxUrl.search = params.toString();
+
+    const res = await fetch(ajaxUrl, {
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    const html = await res.text();
+
+    document.querySelector('#propertiesContainer').innerHTML = html;
+
+    // actualizar URL visible (pero SIN /ajax/)
+    if (push) {
+      const cleanUrl = new URL(url, window.location.origin);
+      history.pushState({}, '', cleanUrl);
+    }
+  }
+
+
+
+  /* PAGINACIÓN CLICK */
+  document.addEventListener('click', e => {
+    const link = e.target.closest('.js-page-link');
+    if (!link) return;
+
+    e.preventDefault();
+    loadProperties(link.href);
+  });
+
+
+  /* SORT */
+  const sort = document.getElementById('sortResults');
+  if (sort) {
+    sort.addEventListener('change', () => {
+      const url = new URL(window.location);
+
+      if (sort.value) url.searchParams.set('sort', sort.value);
+      else url.searchParams.delete('sort');
+
+      url.searchParams.set('page', 1);
+
+      loadProperties(url);
+    });
+  }
+
+
+  /* BACK BUTTON */
+  window.addEventListener('popstate', () => {
+    loadProperties(location.href, false);
+  });
+</script>

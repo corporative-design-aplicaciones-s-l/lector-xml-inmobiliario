@@ -9,3 +9,5 @@ Router::get('/', [HomeController::class, 'index']);
 Router::get('/ajax/towns', [AjaxController::class, 'towns']);
 Router::get('/property/{id}', [PropertyController::class, 'show']);
 Router::post('/contact', [ContactController::class, 'send']);
+Router::get('/ajax/properties', [AjaxController::class, 'list']);
+

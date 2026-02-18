@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Services\PropertyFilter;
 use App\Services\Xml;
 use App\Services\GeoNormalizer;
 
@@ -37,4 +38,33 @@ class AjaxController
 
         echo json_encode($towns);
     }
+
+    public function list(): void
+    {
+        $allProperties = Xml::properties();
+
+        // filtros
+        $properties = PropertyFilter::apply($allProperties, $_GET);
+
+        // orden
+        if (!empty($_GET['sort'])) {
+            usort($properties, function ($a, $b) {
+                return $_GET['sort'] === 'price_asc'
+                    ? $a['price'] <=> $b['price']
+                    : $b['price'] <=> $a['price'];
+            });
+        }
+
+        // paginación
+        $perPage = 20;
+        $page = max(1, (int) ($_GET['page'] ?? 1));
+        $total = count($properties);
+        $totalPages = (int) ceil($total / $perPage);
+
+        $properties = array_slice($properties, ($page - 1) * $perPage, $perPage);
+
+        // devolver SOLO el HTML parcial
+        require VIEW_PATH . '/partials/properties-grid.php';
+    }
+
 }

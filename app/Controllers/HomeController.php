@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Services\PropertySorter;
 use App\Services\TypeNormalizer;
 use App\Services\Xml;
 use App\Services\PropertyFilter;
@@ -111,6 +112,15 @@ class HomeController
       $towns = array_keys($towns);
       sort($towns);
     }
+
+    // 5. Aplicar filtros
+    $properties = PropertyFilter::apply($allProperties, $_GET);
+
+    // 5.1 Ordenar resultados
+    $properties = PropertySorter::apply(
+      $properties,
+      $_GET['sort'] ?? null
+    );
 
 
     /* =====================================================
