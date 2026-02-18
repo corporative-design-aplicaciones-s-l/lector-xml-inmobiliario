@@ -175,6 +175,29 @@
 
         </section>
 
+        <?php
+        $lat = $property['location']['lat'] ?? null;
+        $lng = $property['location']['lng'] ?? null;
+        ?>
+
+        <?php if ($lat && $lng): ?>
+            <section class="property-section">
+
+                <h2 class="section-title">Location</h2>
+
+                <div id="propertyMap" class="property-map"></div>
+
+            </section>
+
+            <script>
+                window.PROPERTY_COORDS = {
+                    lat: <?= (float) $lat ?>,
+                    lng: <?= (float) $lng ?>
+      };
+            </script>
+        <?php endif; ?>
+
+
 
 
         <!-- ================= DESCRIPTION ================= -->

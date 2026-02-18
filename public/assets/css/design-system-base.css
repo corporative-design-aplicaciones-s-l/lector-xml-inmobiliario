@@ -414,6 +414,7 @@ label {
   text-align: center;
   padding: 0 var(--space-4);
 }
+
 .property-status {
   color: var(--color-text-secondary);
   margin-left: 6px;
@@ -1177,4 +1178,13 @@ label {
     grid-template-columns: 1fr;
     text-align: center;
   }
+}
+
+/* ================= MAP ================= */
+
+.property-map {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }

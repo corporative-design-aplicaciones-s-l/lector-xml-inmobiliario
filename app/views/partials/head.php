@@ -31,10 +31,15 @@
 
     <!-- DESIGN SYSTEM -->
     <link rel="stylesheet" href="/assets/css/design-system-base.css">
-    
+
     <!-- SCRIPTS -->
     <script src="/assets/js/dropdowns.js" defer></script>
     <script src="/assets/js/location-filters.js" defer></script>
     <script src="/assets/js/lightbox.js" defer></script>
+
+    <!--Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
 
 </head>
