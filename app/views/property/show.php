@@ -1,5 +1,22 @@
 <?php require_once VIEW_PATH . '/components/icon.php'; ?>
 
+<?php if (!empty($_GET['sent'])): ?>
+    <div id="toast" class="toast-success">
+        Your request has been sent successfully.
+    </div>
+<?php endif; ?>
+<script>
+if (window.location.search.includes('sent=1')) {
+  setTimeout(() => {
+    const url = new URL(window.location);
+    url.searchParams.delete('sent');
+    window.history.replaceState({}, '', url);
+  }, 100);
+}
+</script>
+
+
+
 <section class="property-page">
 
     <div class="container">
@@ -188,6 +205,44 @@
                     ?? $property['desc']['es']
                     ?? null
                 ) ?: '<p>Sin descripción.</p>' ?>
+            </div>
+
+        </section>
+
+        <!-- ================= CONTACT FORM ================= -->
+        <section class="property-section">
+            <?php
+            $autoMessage = sprintf(
+                "I am interested in this property:\n\nType: %s\nLocation: %s, %s\nReference: %s\nPrice: %s %s",
+                $property['type'] ?? '-',
+                $property['location']['town'] ?? '-',
+                $property['location']['province'] ?? '-',
+                $property['ref'] ?? '-',
+                number_format($property['price'] ?? 0, 0, ',', '.'),
+                $property['currency'] ?? '€'
+            );
+            ?>
+
+            <div class="contact-card">
+
+                <h3 class="contact-title">Request more information</h3>
+
+                <form method="POST" action="/contact" class="contact-form">
+
+                    <input type="hidden" name="property_ref" value="<?= htmlspecialchars($property['ref']) ?>">
+                    <input type="hidden" name="property_id" value="<?= htmlspecialchars($property['id']) ?>">
+                    <input type="hidden" name="auto_message" value="<?= htmlspecialchars($autoMessage) ?>">
+
+                    <input name="name" placeholder="Name" required>
+                    <input name="email" type="email" placeholder="Email" required>
+                    <input name="phone" placeholder="Phone (optional)">
+
+                    <button class="btn btn-search">
+                        Request information
+                    </button>
+
+                </form>
+
             </div>
 
         </section>
