@@ -1,23 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const provinceSelect = document.querySelector('select[name="province"]');
-    const townSelect = document.querySelector('select[name="town"]');
+    const provinceInputs = document.querySelectorAll('input[name="province[]"]');
+    const townContainer = document.querySelector('[data-town-options]');
 
-    if (!provinceSelect || !townSelect) return;
+    if (!provinceInputs.length || !townContainer) return;
 
-    provinceSelect.addEventListener("change", async () => {
+    async function loadTowns() {
 
         const params = new URLSearchParams();
-        if (provinceSelect.value) {
-            params.append("province[]", provinceSelect.value);
-        }
+
+        provinceInputs.forEach(input => {
+            if (input.checked) {
+                params.append("province[]", input.value);
+            }
+        });
 
         const res = await fetch("/ajax/towns?" + params.toString());
         const towns = await res.json();
 
-        townSelect.innerHTML =
-            `<option value="">Town</option>` +
-            towns.map(t => `<option value="${t}">${t}</option>`).join("");
+        townContainer.innerHTML = towns.map(t => `
+            <label class="filter-option">
+                <input type="checkbox" name="town[]" value="${t}">
+                ${t}
+            </label>
+        `).join("");
+    }
+
+    provinceInputs.forEach(input => {
+        input.addEventListener("change", loadTowns);
     });
 
 });

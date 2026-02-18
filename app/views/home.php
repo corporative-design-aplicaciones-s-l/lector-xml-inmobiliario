@@ -47,7 +47,7 @@ $selected = fn($name, $v) =>
             Town
           </button>
 
-          <div class="filter-select-menu">
+          <div class="filter-select-menu" data-town-options>
 
             <?php foreach ($towns as $t): ?>
               <label class="filter-option">
@@ -82,10 +82,10 @@ $selected = fn($name, $v) =>
         </div>
 
         <!-- BEDROOMS -->
-         <div class="filter-select">
+        <div class="filter-select">
 
           <button type="button" class="filter-select-trigger">
-              Bedrooms
+            Bedrooms
           </button>
 
           <div class="filter-select-menu">
@@ -93,7 +93,7 @@ $selected = fn($name, $v) =>
             <?php foreach ([1, 2, 3, 4, 5] as $t): ?>
               <label class="filter-option">
                 <input type="checkbox" name="beds[]" value="<?= htmlspecialchars($t) ?>" <?= $checked('beds', $t) ?>>
-                <?= htmlspecialchars($t) ?> <?= $t == 5 ? '+' : '' ?>
+                <?= htmlspecialchars($t) ?>   <?= $t == 5 ? '+' : '' ?>
               </label>
             <?php endforeach; ?>
 
