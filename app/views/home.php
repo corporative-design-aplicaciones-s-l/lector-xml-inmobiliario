@@ -20,48 +20,86 @@ $selected = fn($name, $v) =>
 
       <div class="search-bar">
         <!-- COAST / PROVINCIA -->
-        <select name="province">
-          <option value="">Province</option>
-          <?php foreach ($provinces as $p): ?>
-            <option value="<?= htmlspecialchars($p) ?>" <?= $selected('province', $p) ?>>
-              <?= htmlspecialchars($p) ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
+        <div class="filter-select">
+
+          <button type="button" class="filter-select-trigger">
+            Province
+          </button>
+
+          <div class="filter-select-menu">
+
+            <?php foreach ($provinces as $p): ?>
+              <label class="filter-option">
+                <input type="checkbox" name="province[]" value="<?= htmlspecialchars($p) ?>" <?= $checked('province', $p) ?>>
+                <?= htmlspecialchars($p) ?>
+              </label>
+            <?php endforeach; ?>
+
+          </div>
+
+        </div>
 
 
         <!-- TOWN -->
-        <select name="town">
-          <option value="">Town</option>
-          <?php foreach ($towns as $t): ?>
-            <option value="<?= htmlspecialchars($t) ?>" <?= $selected('town', $t) ?>>
-              <?= htmlspecialchars($t) ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
+        <div class="filter-select">
+
+          <button type="button" class="filter-select-trigger">
+            Town
+          </button>
+
+          <div class="filter-select-menu">
+
+            <?php foreach ($towns as $t): ?>
+              <label class="filter-option">
+                <input type="checkbox" name="town[]" value="<?= htmlspecialchars($t) ?>" <?= $checked('town', $t) ?>>
+                <?= htmlspecialchars($t) ?>
+              </label>
+            <?php endforeach; ?>
+
+          </div>
+
+        </div>
 
 
         <!-- TYPE -->
-        <select name="type">
-          <option value="">Type</option>
-          <?php foreach ($types as $t): ?>
-            <option value="<?= htmlspecialchars($t) ?>" <?= $selected('type', $t) ?>>
-              <?= htmlspecialchars($t) ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
+        <div class="filter-select">
 
+          <button type="button" class="filter-select-trigger">
+            Type
+          </button>
+
+          <div class="filter-select-menu">
+
+            <?php foreach ($types as $t): ?>
+              <label class="filter-option">
+                <input type="checkbox" name="type[]" value="<?= htmlspecialchars($t) ?>" <?= $checked('type', $t) ?>>
+                <?= htmlspecialchars($t) ?>
+              </label>
+            <?php endforeach; ?>
+
+          </div>
+
+        </div>
 
         <!-- BEDROOMS -->
-        <select name="beds">
-          <option value="">Bedrooms</option>
-          <?php foreach ([1, 2, 3, 4, 5] as $b): ?>
-            <option value="<?= $b ?>" <?= $selected('beds', $b) ?>>
-              <?= $b ?>   <?= $b == 5 ? '+' : '' ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
+         <div class="filter-select">
 
+          <button type="button" class="filter-select-trigger">
+              Bedrooms
+          </button>
+
+          <div class="filter-select-menu">
+
+            <?php foreach ([1, 2, 3, 4, 5] as $t): ?>
+              <label class="filter-option">
+                <input type="checkbox" name="beds[]" value="<?= htmlspecialchars($t) ?>" <?= $checked('beds', $t) ?>>
+                <?= htmlspecialchars($t) ?> <?= $t == 5 ? '+' : '' ?>
+              </label>
+            <?php endforeach; ?>
+
+          </div>
+
+        </div>
 
         <!-- PRICE FROM -->
         <input type="number" name="price_min" placeholder="Price from"

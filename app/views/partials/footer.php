@@ -28,6 +28,7 @@
   <!-- TOAST -->
   <script src="/assets/js/toast.js"></script>
   <script src="/assets/js/leaflet.js"></script>
+  
 
   <?php if (!empty($_GET['sent'])): ?>
     <div id="toast" class="toast-success">

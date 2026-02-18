@@ -230,53 +230,51 @@ label {
   font-size: var(--text-xl);
 }
 
-/* ================= DROPDOWN ================= */
-
-.dropdown {
+.filter-dropdown {
   position: relative;
 }
 
 .dropdown-toggle {
   width: 100%;
-  padding: 10px;
+  padding: var(--space-2) var(--space-3);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-lg);
   background: white;
   text-align: left;
   cursor: pointer;
+  font-size: var(--text-xl);
+  border-radius: var(--radius-sm);
 }
 
-.dropdown-panel {
+.dropdown-menu {
   position: absolute;
-  top: calc(100% + 4px);
+  top: 100%;
   left: 0;
   width: 100%;
-  max-height: 220px;
+  max-height: 260px;
   overflow-y: auto;
-
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
-
   display: none;
   z-index: 50;
-  padding: 10px;
 }
 
-.dropdown.open .dropdown-panel {
+.dropdown.open .dropdown-menu {
   display: block;
 }
 
-.dropdown-item {
+.dropdown-option {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-  font-size: 14px;
-  color: var(--color-text-primary);
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
 }
+
+.dropdown-option:hover {
+  background: var(--color-surface);
+}
+
 
 /* ================= PROPERTY CARD ================= */
 
@@ -469,31 +467,8 @@ label {
 .search-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  font-family: var(--font-sans);
 }
-
-
-/* TABS */
-
-.search-tabs {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
-.tab {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: white;
-  padding: 10px 28px;
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-semibold);
-}
-
-.tab.active {
-  background: rgba(255, 255, 255, 0.08);
-}
-
 
 /* BARRA FILTROS */
 
@@ -502,16 +477,19 @@ label {
   grid-template-columns: repeat(7, 1fr) auto;
   background: #e9edf2;
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .search-bar select,
 .search-bar input {
   border: none;
   padding: 16px;
-  font-size: 14px;
+  font-size: 20px;
   background: transparent;
   border-right: 1px solid #cfd6df;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
 }
 
 .search-bar input {
@@ -1370,4 +1348,70 @@ label {
   border: 1px solid var(--color-border);
   padding: var(--space-2);
   text-align: left;
+}
+
+/* ================= FILTER MULTISELECT ================= */
+
+.filter-select {
+  position: relative;
+}
+
+/* botón visual idéntico a <select> */
+.filter-select-trigger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-10);
+  border: none;
+  border-right: 1px solid #cfd6df;
+
+  background: transparent;
+  font-size: 20px;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+/* flecha tipo select */
+.filter-select-trigger::after {
+  content: "▾";
+  float: right;
+  color: var(--color-text-muted);
+}
+
+/* menú */
+.filter-select-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 260px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  display: none;
+  z-index: 50;
+}
+
+/* abierto */
+.filter-select.open .filter-select-menu {
+  display: block;
+}
+
+/* opciones */
+.filter-option {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filter-option:hover {
+  background: var(--color-surface);
 }

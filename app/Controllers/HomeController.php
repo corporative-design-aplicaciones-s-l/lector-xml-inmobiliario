@@ -114,19 +114,13 @@ class HomeController
     }
 
     // 5. Aplicar filtros
-    $properties = PropertyFilter::apply($allProperties, $_GET);
+    $filtered = PropertyFilter::apply($allProperties, $_GET);
 
     // 5.1 Ordenar resultados
     $properties = PropertySorter::apply(
-      $properties,
+      $filtered,
       $_GET['sort'] ?? null
     );
-
-
-    /* =====================================================
-       6. APLICAR FILTROS → RESULTADOS VISIBLES
-    ===================================================== */
-    $filtered = PropertyFilter::apply($allProperties, $_GET);
 
 
     /* =====================================================

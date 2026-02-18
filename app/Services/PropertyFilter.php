@@ -24,6 +24,17 @@ class PropertyFilter
                 return false;
             }
 
+            /* ================= BEDS ================= */
+
+            if (!empty($filters['beds'])) {
+
+                $minBeds = min(array_map('intval', (array) $filters['beds']));
+
+                if (($p['details']['beds'] ?? 0) < $minBeds) {
+                    return false;
+                }
+            }
+
 
             /* ================= TYPE ================= */
 
