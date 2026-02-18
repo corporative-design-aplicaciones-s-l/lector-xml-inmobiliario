@@ -6,13 +6,13 @@
     </div>
 <?php endif; ?>
 <script>
-if (window.location.search.includes('sent=1')) {
-  setTimeout(() => {
-    const url = new URL(window.location);
-    url.searchParams.delete('sent');
-    window.history.replaceState({}, '', url);
-  }, 100);
-}
+    if (window.location.search.includes('sent=1')) {
+        setTimeout(() => {
+            const url = new URL(window.location);
+            url.searchParams.delete('sent');
+            window.history.replaceState({}, '', url);
+        }, 100);
+    }
 </script>
 
 
@@ -228,6 +228,11 @@ if (window.location.search.includes('sent=1')) {
                 <h3 class="contact-title">Request more information</h3>
 
                 <form method="POST" action="/contact" class="contact-form">
+
+                    <!--honeycomb anti-spam field-->
+                    <input type="text" name="website" style="display:none">
+                    <input type="hidden" name="ts" value="<?= time() ?>">
+
 
                     <input type="hidden" name="property_ref" value="<?= htmlspecialchars($property['ref']) ?>">
                     <input type="hidden" name="property_id" value="<?= htmlspecialchars($property['id']) ?>">

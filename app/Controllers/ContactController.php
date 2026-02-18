@@ -22,6 +22,26 @@ class ContactController
             return;
         }
 
+        // Honeypot
+        if (!empty($_POST['website'])) {
+            http_response_code(400);
+            exit('Spam detected');
+        }
+
+        $ts = (int) ($_POST['ts'] ?? 0);
+
+        if (!$ts || time() - $ts < 2) {
+            http_response_code(400);
+            exit('Too fast');
+        }
+
+        $name = trim($_POST['name'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+
+        if (strlen($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            http_response_code(422);
+            exit('Invalid data');
+        }
 
         // ===== Guardar lead =====
         $lead = [
