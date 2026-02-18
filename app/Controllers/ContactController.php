@@ -8,19 +8,29 @@ class ContactController
 {
     public function send(): void
     {
-        // ===== Validación básica =====
+        // ================= CONTEXT =================
+        $context = $_POST['context'] ?? 'property';
+
+        // ================= CAMPOS =================
         $ref = trim($_POST['property_ref'] ?? '');
+        $propId = trim($_POST['property_id'] ?? '');
         $name = trim($_POST['name'] ?? '');
         $email = trim($_POST['email'] ?? '');
         $phone = trim($_POST['phone'] ?? '');
-        $message = trim($_POST['auto_message'] ?? '');
-        $propId = trim($_POST['property_id'] ?? ''); // Asumimos que el ref es el ID de la propiedad para redirigir
+        $message = trim($_POST['auto_message'] ?? $_POST['message'] ?? '');
 
-        if (!$name || !$email || !$ref) {
+        // ================= VALIDACIÓN =================
+        if (!$name || !$email) {
             http_response_code(422);
-            echo 'Missing required fields';
-            return;
+            exit('Missing required fields');
         }
+
+        if (strlen($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            http_response_code(422);
+            exit('Invalid data');
+        }
+
+        // ================= ANTISPAM =================
 
         // Honeypot
         if (!empty($_POST['website'])) {
@@ -28,25 +38,45 @@ class ContactController
             exit('Spam detected');
         }
 
+        // Timer
         $ts = (int) ($_POST['ts'] ?? 0);
-
         if (!$ts || time() - $ts < 2) {
             http_response_code(400);
             exit('Too fast');
         }
 
-        $name = trim($_POST['name'] ?? '');
-        $email = trim($_POST['email'] ?? '');
+        // ================= MENSAJE FINAL =================
 
-        if (strlen($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            http_response_code(422);
-            exit('Invalid data');
+        if ($context === 'property') {
+            $finalMessage = "
+PROPERTY ENQUIRY
+
+Reference: {$ref}
+Name: {$name}
+Email: {$email}
+Phone: {$phone}
+
+Message:
+{$message}
+";
+        } else {
+            $finalMessage = "
+GENERAL CONTACT REQUEST
+
+Name: {$name}
+Email: {$email}
+Phone: {$phone}
+
+Message:
+{$message}
+";
         }
 
-        // ===== Guardar lead =====
+        // ================= GUARDAR LEAD =================
         $lead = [
             'date' => date('Y-m-d H:i:s'),
-            'property_ref' => $ref,
+            'context' => $context,
+            'property_ref' => $ref ?: null,
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
@@ -57,23 +87,24 @@ class ContactController
 
         LeadStorage::save($lead);
 
-        // ===== Email HTML =====
-        $html = "
-                <h2>New lead from Resales Costa Blanca</h2>
-                <p><strong>Reference:</strong> {$ref}</p>
-                <p><strong>Name:</strong> {$name}</p>
-                <p><strong>Email:</strong> {$email}</p>
-                <p><strong>Phone:</strong> {$phone}</p>
-                <pre>{$message}</pre>
-            ";
+        // ================= EMAIL =================
+        $html = nl2br(htmlspecialchars($finalMessage));
+
         Mailer::send(
-            subject: "Nuevo lead propiedad {$ref}",
+            subject: $context === 'property'
+            ? "New lead for property {$ref}"
+            : "New general contact lead",
             html: $html,
             replyTo: $email
         );
 
-        // ===== Redirección =====
-        header("Location: /property/{$propId}?sent=1");
+        // ================= REDIRECCIÓN =================
+        if ($context === 'property' && $propId) {
+            header("Location: /property/{$propId}?sent=1");
+        } else {
+            header("Location: /?sent=1");
+        }
+
         exit;
     }
 }

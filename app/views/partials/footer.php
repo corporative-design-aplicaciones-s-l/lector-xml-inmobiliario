@@ -6,4 +6,13 @@
         </p>
 
     </div>
+
+    <!-- TOAST -->
+    <script src="/assets/js/toast.js"></script>
+    <?php if (!empty($_GET['sent'])): ?>
+        <div id="toast" class="toast-success">
+            Your request has been sent successfully.
+        </div>
+    <?php endif; ?>
+
 </footer>

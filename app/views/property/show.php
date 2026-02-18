@@ -1,22 +1,5 @@
 <?php require_once VIEW_PATH . '/components/icon.php'; ?>
 
-<?php if (!empty($_GET['sent'])): ?>
-    <div id="toast" class="toast-success">
-        Your request has been sent successfully.
-    </div>
-<?php endif; ?>
-<script>
-    if (window.location.search.includes('sent=1')) {
-        setTimeout(() => {
-            const url = new URL(window.location);
-            url.searchParams.delete('sent');
-            window.history.replaceState({}, '', url);
-        }, 100);
-    }
-</script>
-
-
-
 <section class="property-page">
 
     <div class="container">
@@ -25,7 +8,7 @@
         <header class="property-hero">
 
             <div class="property-hero-left">
-                <div class="property-location">
+                <div class="hero-property-location">
                     <?= htmlspecialchars($property['location']['town'] ?? '') ?>,
                     <?= htmlspecialchars($property['location']['province'] ?? '') ?>
                 </div>

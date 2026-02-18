@@ -140,93 +140,54 @@ $selected = fn($name, $v) =>
     <div class="properties-grid" id="propertiesContainer">
       <?php require VIEW_PATH . '/partials/properties-grid.php'; ?>
     </div>
-    <?php if ($totalPages > 1): ?>
-      <nav style="margin-top:40px; text-align:center;">
 
-        <?php
-        $query = $_GET;
-        ?>
-
-        <!-- Anterior -->
-        <?php if ($page > 1): ?>
-          <?php $query['page'] = $page - 1; ?>
-          <a class="btn" style="text-decoration: none; background: var(--color-accent); color: white;"
-            href="?<?= http_build_query($query) ?>">
-            ← Previous
-          </a>
-        <?php endif; ?>
-
-
-        <!-- Números -->
-        <?php
-        $range = 2; // páginas a cada lado de la actual
-        $start = max(1, $page - $range);
-        $end = min($totalPages, $page + $range);
-        ?>
-
-        <!-- Primera página -->
-        <?php if ($start > 1): ?>
-          <?php $query['page'] = 1; ?>
-          <a class="btn js-page-link"
-            style="margin-inline:4px; text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
-            href="/ajax/properties?<?= http_build_query($query) ?>">1</a>
-
-          <?php if ($start > 2): ?>
-            <span style="margin-inline:6px;">…</span>
-          <?php endif; ?>
-        <?php endif; ?>
-
-
-        <!-- Rango central -->
-        <?php for ($i = $start; $i <= $end; $i++): ?>
-          <?php $query['page'] = $i; ?>
-
-          <a href="?<?= http_build_query($query) ?>" class="btn" style="
-       margin-inline:4px;
-       text-decoration:none;
-       <?= $i === $page
-         ? 'border:1px solid var(--color-primary); background:var(--color-primary); color:white;'
-         : 'border:1px solid var(--color-secondary);color:var(--color-primary);'
-         ?>
-     ">
-            <?= $i ?>
-          </a>
-        <?php endfor; ?>
-
-
-        <!-- Última página -->
-        <?php if ($end < $totalPages): ?>
-
-          <?php if ($end < $totalPages - 1): ?>
-            <span style="margin-inline:6px;">…</span>
-          <?php endif; ?>
-
-          <?php $query['page'] = $totalPages; ?>
-          <a class="btn"
-            style="margin-inline:4px; text-decoration:none; border:1px solid var(--color-secondary); color:var(--color-primary);"
-            href="/ajax/properties?<?= http_build_query($query) ?>">
-            <?= $totalPages ?>
-          </a>
-
-        <?php endif; ?>
-
-
-
-        <!-- Siguiente -->
-        <?php if ($page < $totalPages): ?>
-          <?php $query['page'] = $page + 1; ?>
-          <a class="btn js-page-link" style="text-decoration: none; background: var(--color-accent); color: white;"
-            href="/ajax/properties?<?= http_build_query($query) ?>">
-            Next →
-          </a>
-        <?php endif; ?>
-
-      </nav>
-    <?php endif; ?>
 
 
   </div>
 </section>
+
+<section class="cta-contact">
+
+  <div class="container">
+
+    <div class="cta-contact-card">
+
+      <div class="cta-contact-text">
+        <h2>Can't find your perfect property?</h2>
+        <p>
+          Tell us what you're looking for and our team will contact you with
+          the best options available on the Costa Blanca.
+        </p>
+      </div>
+
+      <form method="POST" action="/contact" class="cta-contact-form">
+
+        <input type="hidden" name="context" value="general">
+        <input type="text" name="website" style="display:none">
+        <input type="hidden" name="ts" value="<?= time() ?>">
+
+
+        <input name="name" placeholder="Your name" required>
+        <input name="email" type="email" placeholder="Email address" required>
+        <input name="phone" placeholder="Phone (optional)">
+
+        <textarea name="message" placeholder="Tell us what property you are looking for..." required></textarea>
+
+        <!-- Honeypot antispam -->
+        <input type="text" name="website" style="display:none">
+
+        <button class="btn btn-accent">
+          Request information
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 <script>
   async function loadProperties(url, push = true) {

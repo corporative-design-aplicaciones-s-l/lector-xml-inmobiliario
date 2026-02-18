@@ -152,6 +152,7 @@ button {
   max-width: var(--container-width);
   margin-inline: auto;
   padding-inline: var(--container-padding);
+  padding-bottom: 0;
 }
 
 .text-center {
@@ -403,6 +404,16 @@ label {
   font-weight: var(--font-weight-medium);
 }
 
+.hero-property-location {
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  background-color: var(--color-background);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-4);
+}
 .property-status {
   color: var(--color-text-secondary);
   margin-left: 6px;
@@ -1053,9 +1064,9 @@ label {
 
 .results-toolbar {
   max-width: var(--container-width);
-  margin: var(--space-6) ;
+  margin: var(--space-6);
   padding-inline: var(--container-padding);
-  
+
   display: flex;
   justify-content: flex-start;
   align-items: start;
@@ -1102,4 +1113,68 @@ label {
   background-size: 6px 6px;
   background-repeat: no-repeat;
   padding-right: 32px;
+}
+
+/* ================= CTA CONTACT ================= */
+
+.cta-contact {
+  background: var(--color-primary);
+  color: white;
+  padding-block: var(--space-12);
+}
+
+.cta-contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+}
+
+.cta-contact-text h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+.cta-contact-text p {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cta-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cta-contact-form input,
+.cta-contact-form textarea {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-size: var(--text-lg);
+}
+
+.cta-contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  font-size: var(--text-xl);
+  padding: 14px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cta-contact-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
