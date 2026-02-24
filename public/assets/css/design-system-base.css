@@ -155,6 +155,33 @@ button {
   padding-bottom: 0;
 }
 
+.search-bar>* {
+  height: 64px;
+}
+
+.search-bar input {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-10);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.search-bar select,
+.search-bar input {
+  padding: 0 var(--space-10);
+}
+
+.search-bar input::placeholder {
+  line-height: 1;
+}
+
+.nav-logo {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
 .text-center {
   text-align: center;
 }
@@ -802,6 +829,20 @@ label {
     gap: var(--space-2);
   }
 
+  .nav-logo {
+    font-size: var(--text-xl);
+  }
+
+  .search-bar input {
+    padding-left: 2.5rem;
+    padding-right: var(--space-6);
+    text-align: left;
+  }
+
+  .filter-select {
+    padding: 2% 0;
+  }
+
   .property-gallery {
     grid-template-columns: 1fr;
   }
@@ -824,13 +865,17 @@ label {
 /* ======================================================
    MOBILE
    ====================================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   /* HERO PROPERTY */
   .property-hero {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-4);
+  }
+
+    .nav-logo {
+    font-size: var(--text-lg);
   }
 
   .property-hero-right {
@@ -1188,6 +1233,9 @@ label {
   font-size: var(--text-lg);
 }
 
+.contact-item{
+  text-align: end;
+}
 .contact-item strong {
   color: var(--color-text-muted);
   font-weight: var(--font-weight-medium);
@@ -1414,4 +1462,38 @@ label {
 
 .filter-option:hover {
   background: var(--color-surface);
+}
+
+@media (max-width: 768px) {
+
+  .property-section {
+    padding: var(--space-4);
+  }
+
+  .contact-card {
+    padding: var(--space-5);
+  }
+
+  .contact-title {
+    font-size: var(--text-xl);
+  }
+
+  .contact-form input {
+    font-size: var(--text-base);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .property-section {
+    background: transparent;
+    padding: var(--space-3);
+  }
+
+  .contact-card {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
 }

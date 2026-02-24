@@ -102,16 +102,16 @@ $selected = fn($name, $v) =>
         </div>
 
         <!-- PRICE FROM -->
-        <input type="number" name="price_min" placeholder="Price from"
+        <input type="number" class="search-input" name="price_min" placeholder="Price from"
           value="<?= htmlspecialchars($f['price_min'] ?? '') ?>" min="0" step="1" />
 
         <!-- PRICE TO -->
-        <input type="number" name="price_max" placeholder="Price to"
+        <input type="number" class="search-input" name="price_max" placeholder="Price to"
           value="<?= htmlspecialchars($f['price_max'] ?? '') ?>" min="0" step="1" />
 
 
         <!-- REFERENCE -->
-        <input type="text" name="ref" placeholder="Reference..." value="<?= htmlspecialchars($f['ref'] ?? '') ?>">
+        <input type="text" class="search-input" name="ref" placeholder="Reference..." value="<?= htmlspecialchars($f['ref'] ?? '') ?>">
 
       </div>
       <div class="search-links">

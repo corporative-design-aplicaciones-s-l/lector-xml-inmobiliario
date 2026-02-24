@@ -3,7 +3,7 @@
         style="display:flex; justify-content:space-between; align-items:center; padding-block:var(--space-4);">
 
         <!-- Logo -->
-        <a href="/" style="font-size:var(--text-2xl); font-weight:var(--font-weight-bold); text-decoration:none;">
+        <a href="/" class="nav-logo">
 
             <span style="color: var(--color-accent);">RESALES</span>
             <span style="color: var(--color-primary);">COSTABLANCA</span>
@@ -20,7 +20,7 @@
             <div class="contact-item">
                 <strong>Phone:</strong>
                 <a href="tel:+34606509389">(+34) 606 509 389</a>
-                ·
+                <br>
                 <a href="tel:+34618506228">(+34) 618 506 228</a>
             </div>
         </div>

@@ -3,6 +3,11 @@
 Pequeño esqueleto para apps PHP “nativas” con MVC ligero, autoload PSR-4 y enrutador simple.
 
 ---
+# Autor
+
+Max Serratosa[https://maxserratosa.es]
+
+---
 
 ## Requisitos
 
